@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC9C9826E23F7700B99BBC /* VSSession.swift */; };
 		F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */; };
 		F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */; };
 		F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */; };
@@ -14,6 +15,8 @@
 		F5CB9A2226E169CB003DE7A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CB9A2126E169CB003DE7A1 /* Preview Assets.xcassets */; };
 		F5CB9A2D26E169CB003DE7A1 /* VirtualSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A2C26E169CB003DE7A1 /* VirtualSetTests.swift */; };
 		F5CB9A3826E169CB003DE7A1 /* VirtualSetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A3726E169CB003DE7A1 /* VirtualSetUITests.swift */; };
+		F5CB9A4626E1F0BB003DE7A1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */; };
+		F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5BC9C9826E23F7700B99BBC /* VSSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSSession.swift; sourceTree = "<group>"; };
 		F5CB9A1526E169CA003DE7A1 /* VirtualSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		F5CB9A3326E169CB003DE7A1 /* VirtualSetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CB9A3726E169CB003DE7A1 /* VirtualSetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSetUITests.swift; sourceTree = "<group>"; };
 		F5CB9A3926E169CB003DE7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,14 @@
 		F5CB9A1726E169CA003DE7A1 /* VirtualSet */ = {
 			isa = PBXGroup;
 			children = (
+				F5CB9A4C26E1FC7B003DE7A1 /* Views */,
 				F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */,
-				F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */,
 				F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */,
 				F5CB9A1E26E169CB003DE7A1 /* Assets.xcassets */,
 				F5CB9A2326E169CB003DE7A1 /* Info.plist */,
 				F5CB9A2026E169CB003DE7A1 /* Preview Content */,
+				F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */,
+				F5BC9C9826E23F7700B99BBC /* VSSession.swift */,
 			);
 			path = VirtualSet;
 			sourceTree = "<group>";
@@ -131,6 +139,15 @@
 				F5CB9A3926E169CB003DE7A1 /* Info.plist */,
 			);
 			path = VirtualSetUITests;
+			sourceTree = "<group>";
+		};
+		F5CB9A4C26E1FC7B003DE7A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */,
+				F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5CB9A4626E1F0BB003DE7A1 /* Launch Screen.storyboard in Resources */,
 				F5CB9A2226E169CB003DE7A1 /* Preview Assets.xcassets in Resources */,
 				F5CB9A1F26E169CB003DE7A1 /* Assets.xcassets in Resources */,
 			);
@@ -263,7 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */,
+				F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */,
 				F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */,
+				F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */,
 				F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
