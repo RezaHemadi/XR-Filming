@@ -16,14 +16,14 @@ struct ContentView : View {
         switch session.state {
         case .initializing, .pickingSet:
             return true
-        case .inProgress:
+        case .exploringScene:
             return false
         }
     }
     
     var body: some View {
         ZStack{
-            ARViewContainer()
+            ARViewContainer(session: session)
                 .edgesIgnoringSafeArea(.all)
             
             if dimBackground {
@@ -32,33 +32,15 @@ struct ContentView : View {
             }
             
             switch session.state {
-            case .initializing, .pickingSet:
+            case .initializing:
+                Text("Initializing...")
+            case .pickingSet:
                 ScenePickerView(session: session)
-            default:
-                EmptyView()
+            case .exploringScene:
+                VSControlsView()
             }
         }
     }
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        
-        return arView
-        
-    }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
 }
 
 #if DEBUG

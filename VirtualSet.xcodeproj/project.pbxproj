@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC9C9826E23F7700B99BBC /* VSSession.swift */; };
+		F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */; };
+		F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */; };
+		F5BDB24726E2AEC10021D382 /* SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24626E2AEC10021D382 /* SnapshotView.swift */; };
+		F5BDB24926E2AEF90021D382 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24826E2AEF90021D382 /* AddItemView.swift */; };
+		F5BDB24B26E2AF380021D382 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24A26E2AF380021D382 /* RecordView.swift */; };
 		F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */; };
 		F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */; };
 		F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */; };
@@ -17,6 +22,9 @@
 		F5CB9A3826E169CB003DE7A1 /* VirtualSetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A3726E169CB003DE7A1 /* VirtualSetUITests.swift */; };
 		F5CB9A4626E1F0BB003DE7A1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */; };
 		F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */; };
+		F5CF4D0126E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF4D0026E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift */; };
+		F5CF4D0326E2822B008FE8D0 /* VSControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF4D0226E2822B008FE8D0 /* VSControlsView.swift */; };
+		F5E4993C26E265210031FF9A /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4993B26E265210031FF9A /* ARViewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,11 @@
 
 /* Begin PBXFileReference section */
 		F5BC9C9826E23F7700B99BBC /* VSSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSSession.swift; sourceTree = "<group>"; };
+		F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoreOptionsView.swift; path = VirtualSet/Views/VSControls/MoreOptionsView.swift; sourceTree = SOURCE_ROOT; };
+		F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSceneView.swift; sourceTree = "<group>"; };
+		F5BDB24626E2AEC10021D382 /* SnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotView.swift; sourceTree = "<group>"; };
+		F5BDB24826E2AEF90021D382 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		F5BDB24A26E2AF380021D382 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		F5CB9A1526E169CA003DE7A1 /* VirtualSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +66,9 @@
 		F5CB9A3926E169CB003DE7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePickerView.swift; sourceTree = "<group>"; };
+		F5CF4D0026E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSSession+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		F5CF4D0226E2822B008FE8D0 /* VSControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSControlsView.swift; sourceTree = "<group>"; };
+		F5E4993B26E265210031FF9A /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5BDB24326E2A6210021D382 /* VSControls */ = {
+			isa = PBXGroup;
+			children = (
+				F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */,
+				F5CF4D0226E2822B008FE8D0 /* VSControlsView.swift */,
+				F5BDB24A26E2AF380021D382 /* RecordView.swift */,
+				F5BDB24826E2AEF90021D382 /* AddItemView.swift */,
+				F5BDB24626E2AEC10021D382 /* SnapshotView.swift */,
+				F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */,
+			);
+			path = VSControls;
+			sourceTree = "<group>";
+		};
 		F5CB9A0C26E169CA003DE7A1 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +132,7 @@
 		F5CB9A1726E169CA003DE7A1 /* VirtualSet */ = {
 			isa = PBXGroup;
 			children = (
+				F5E4993D26E26BE30031FF9A /* VSSession */,
 				F5CB9A4C26E1FC7B003DE7A1 /* Views */,
 				F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */,
 				F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */,
@@ -110,7 +140,6 @@
 				F5CB9A2326E169CB003DE7A1 /* Info.plist */,
 				F5CB9A2026E169CB003DE7A1 /* Preview Content */,
 				F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */,
-				F5BC9C9826E23F7700B99BBC /* VSSession.swift */,
 			);
 			path = VirtualSet;
 			sourceTree = "<group>";
@@ -146,8 +175,19 @@
 			children = (
 				F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */,
 				F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */,
+				F5E4993B26E265210031FF9A /* ARViewContainer.swift */,
+				F5BDB24326E2A6210021D382 /* VSControls */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F5E4993D26E26BE30031FF9A /* VSSession */ = {
+			isa = PBXGroup;
+			children = (
+				F5BC9C9826E23F7700B99BBC /* VSSession.swift */,
+				F5CF4D0026E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift */,
+			);
+			path = VSSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,11 +320,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */,
+				F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */,
 				F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */,
 				F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */,
+				F5CF4D0126E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift in Sources */,
 				F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */,
+				F5BDB24726E2AEC10021D382 /* SnapshotView.swift in Sources */,
+				F5BDB24B26E2AF380021D382 /* RecordView.swift in Sources */,
+				F5BDB24926E2AEF90021D382 /* AddItemView.swift in Sources */,
 				F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */,
 				F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */,
+				F5E4993C26E265210031FF9A /* ARViewContainer.swift in Sources */,
+				F5CF4D0326E2822B008FE8D0 /* VSControlsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

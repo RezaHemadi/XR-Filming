@@ -27,7 +27,7 @@ struct ScenePickerView: View {
                         .frame(width: 120, height: 120)
                         .padding(10)
                         .onTapGesture {
-                            session.state = .inProgress
+                            session.state = .exploringScene
                         }
                 }
             }
