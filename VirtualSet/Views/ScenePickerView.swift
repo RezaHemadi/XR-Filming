@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScenePickerView: View {
     
-    @EnvironmentObject var session: VSSession
+    var session: VSSession
     
     var body: some View {
         VStack(alignment: .center) {
@@ -42,7 +42,6 @@ struct ScenePickerView: View {
 
 struct ScenePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScenePickerView()
-            .environmentObject(VSSession())
+        ScenePickerView(session: VSSession())
     }
 }

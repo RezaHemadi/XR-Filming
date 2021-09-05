@@ -34,6 +34,8 @@ final class VSSession: NSObject, ObservableObject {
             guard oldValue != arView else { return }
             
             arView?.session.delegate = self
+            configureARSession(state)
+            coachingOverlay = ARCoachingViewContainer(session: self)
         }
     }
     
@@ -43,6 +45,31 @@ final class VSSession: NSObject, ObservableObject {
     /// determine whether AR Session should attempt relocalization
     var shouldAttemptRelocalization: Bool {
         true
+    }
+    
+    var coachingOverlay: ARCoachingViewContainer?
+    var uiCoachingView: ARCoachingOverlayView?
+    var surfaceDetected: Bool = false {
+        didSet {
+            os_log(.info, "surface detected: %s", "\(surfaceDetected)")
+            shouldShowCoachingOverlay = !(surfaceDetected && isTrackingNormal)
+        }
+    }
+    var isTrackingNormal: Bool = false {
+        didSet {
+            os_log(.info, "is tracking normal: %s", "\(isTrackingNormal)")
+            shouldShowCoachingOverlay = !(surfaceDetected && isTrackingNormal)
+        }
+    }
+    
+    @Published var shouldShowCoachingOverlay: Bool = false {
+        didSet {
+            guard oldValue != shouldShowCoachingOverlay else { return }
+            
+            os_log(.info, "should show coaching overlay: %s", "\(shouldShowCoachingOverlay)")
+            
+            uiCoachingView?.setActive(shouldShowCoachingOverlay, animated: true)
+        }
     }
     
     // MARK: - Initializatin
@@ -74,10 +101,7 @@ final class VSSession: NSObject, ObservableObject {
         let options: ARSession.RunOptions = []
         
         switch state {
-        case .initializing:
-            configuration.planeDetection = [.horizontal]
-            session.run(configuration, options: options)
-        case .pickingSet:
+        case .initializing, .pickingSet:
             configuration.planeDetection = [.horizontal]
             session.run(configuration, options: options)
         case .exploringScene:

@@ -3,5 +3,25 @@
     "libraryIdentifier" : "a9df306273d969aaa05d3f62e6a6fcd8",
     "format" : "model",
     "displayName" : "Computer for Portal.usdz"
+  },
+  {
+    "libraryIdentifier" : "6b13e6408ed1d86f09fd6449eb5f7348",
+    "format" : "model",
+    "displayName" : "dynamic stacks set.usdz"
+  },
+  {
+    "libraryIdentifier" : "457940e3105ef6455b40192bbdb0bd88",
+    "format" : "model",
+    "displayName" : "Presentation Set.usdz"
+  },
+  {
+    "libraryIdentifier" : "d7779c43da1790793987e05d9a7333df",
+    "format" : "model",
+    "displayName" : "VR_room_with_Tiltbrush_session.usdz"
+  },
+  {
+    "libraryIdentifier" : "5225e6af6a8cd8620e237c904c9ba8ee",
+    "format" : "model",
+    "displayName" : "Japanese_Room.usdz"
   }
 ]

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 /// - Tag: ARViewContainer Structure to interface SwiftUI content view with UIKit
 struct ARViewContainer {
@@ -30,6 +31,7 @@ extension ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
+        arView.debugOptions = [.showStatistics]
         
         // Capture the instantiated arView to access when app state changes
         session.arView = arView

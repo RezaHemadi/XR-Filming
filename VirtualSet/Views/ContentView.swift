@@ -35,10 +35,13 @@ struct ContentView : View {
             case .initializing:
                 Text("Initializing...")
             case .pickingSet:
-                ScenePickerView()
-                    .environmentObject(session)
+                ScenePickerView(session: session)
             case .exploringScene:
                 VSControlsView()
+            }
+            
+            if session.shouldShowCoachingOverlay, let coachingView = session.coachingOverlay {
+                coachingView
             }
         }
     }

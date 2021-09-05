@@ -28,9 +28,16 @@ extension VSSession: ARSessionDelegate {
     
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         os_log(.info, "camera did change tracking state to: %s", "\(camera.trackingState)")
-        
-        if state == .initializing {
-            state = .pickingSet
+        switch camera.trackingState {
+        case .notAvailable:
+            isTrackingNormal = false
+        case .limited(let _):
+            isTrackingNormal = false
+            if state == .initializing {
+                state = .pickingSet
+            }
+        case .normal:
+            isTrackingNormal = true
         }
     }
     
@@ -44,5 +51,13 @@ extension VSSession: ARSessionDelegate {
     
     func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
         
+    }
+    
+    func session(_ session: ARSession, didUpdate frame: ARFrame) {
+        if !frame.anchors.compactMap({$0 as? ARPlaneAnchor}).isEmpty {
+            surfaceDetected = true
+        } else {
+            surfaceDetected = false
+        }
     }
 }
