@@ -14,6 +14,12 @@ import os.signpost
 final class VSSession: NSObject, ObservableObject {
     // MARK: - Properties
     
+    /// Reflects the current state of the user experience to update the user interface accordingly
+    @Published var state: State = .initializing
+    
+    /// Keep track of recording status
+    @Published var isRecording: Bool = false
+    
     /// View That Renders AR Content
     var arView: ARView? {
         didSet {
@@ -27,9 +33,6 @@ final class VSSession: NSObject, ObservableObject {
     var shouldAttemptRelocalization: Bool {
         true
     }
-    
-    /// Reflects the current state of the user experience to update the user interface accordingly
-    @Published var state: State = .initializing
 }
 
 // MARK: - Types

@@ -12,6 +12,7 @@ struct MoreOptionsView: View {
         ZStack {
             Rectangle()
                 .fill(Color.gray)
+                .cornerRadius(15.0)
                 .frame(width: 60, height: 30)
             
             Rectangle()

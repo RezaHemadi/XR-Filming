@@ -13,6 +13,7 @@
 		F5BDB24726E2AEC10021D382 /* SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24626E2AEC10021D382 /* SnapshotView.swift */; };
 		F5BDB24926E2AEF90021D382 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24826E2AEF90021D382 /* AddItemView.swift */; };
 		F5BDB24B26E2AF380021D382 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24A26E2AF380021D382 /* RecordView.swift */; };
+		F5BDB24D26E3E1840021D382 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */; };
 		F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */; };
 		F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */; };
 		F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */; };
@@ -51,6 +52,7 @@
 		F5BDB24626E2AEC10021D382 /* SnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotView.swift; sourceTree = "<group>"; };
 		F5BDB24826E2AEF90021D382 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		F5BDB24A26E2AF380021D382 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = SOURCE_ROOT; };
 		F5CB9A1526E169CA003DE7A1 /* VirtualSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		F5CB9A4C26E1FC7B003DE7A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */,
 				F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */,
 				F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */,
 				F5E4993B26E265210031FF9A /* ARViewContainer.swift */,
@@ -328,6 +331,7 @@
 				F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */,
 				F5BDB24726E2AEC10021D382 /* SnapshotView.swift in Sources */,
 				F5BDB24B26E2AF380021D382 /* RecordView.swift in Sources */,
+				F5BDB24D26E3E1840021D382 /* DeviceRotationViewModifier.swift in Sources */,
 				F5BDB24926E2AEF90021D382 /* AddItemView.swift in Sources */,
 				F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */,
 				F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */,
