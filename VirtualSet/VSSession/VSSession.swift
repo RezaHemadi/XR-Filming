@@ -8,14 +8,22 @@
 import Foundation
 import Combine
 import RealityKit
+import ARKit
 import os.signpost
+import SwiftUI
 
 /// - Tag: Virtual Set Session Class
 final class VSSession: NSObject, ObservableObject {
     // MARK: - Properties
     
     /// Reflects the current state of the user experience to update the user interface accordingly
-    @Published var state: State = .initializing
+    @Published var state: State = .initializing {
+        didSet {
+            guard oldValue != state else { return }
+            
+            configureARSession(state)
+        }
+    }
     
     /// Keep track of recording status
     @Published var isRecording: Bool = false
@@ -29,9 +37,60 @@ final class VSSession: NSObject, ObservableObject {
         }
     }
     
+    /// Array of Scenes included in the bundle
+    @Published var bundleSets = [VirtualSet]()
+    
     /// determine whether AR Session should attempt relocalization
     var shouldAttemptRelocalization: Bool {
         true
+    }
+    
+    // MARK: - Initializatin
+    override init() {
+        super.init()
+        
+        loadBundleScenes()
+    }
+    
+    // MARK: - Methods
+    private func loadBundleScenes() {
+        Experience.loadSceneOneAsync { result in
+            switch result {
+            case .success(let sceneOne):
+                let set = VirtualSet(image: Image("SceneOne"), set: sceneOne)
+                self.bundleSets.append(set)
+                
+            case .failure(let error):
+                os_log(.error, "error loading scene one from app bundle: %s", "\(error.localizedDescription)")
+                return
+            }
+        }
+    }
+    
+    private func configureARSession(_ state: State) {
+        guard let session = arView?.session else { return }
+        
+        let configuration = ARWorldTrackingConfiguration()
+        let options: ARSession.RunOptions = []
+        
+        switch state {
+        case .initializing:
+            configuration.planeDetection = [.horizontal]
+            session.run(configuration, options: options)
+        case .pickingSet:
+            configuration.planeDetection = [.horizontal]
+            session.run(configuration, options: options)
+        case .exploringScene:
+            configuration.frameSemantics = .personSegmentationWithDepth
+            session.run(configuration, options: options)
+        }
+    }
+    
+    // MARK: - User Interaction
+    func userDidPickSet(_ set: VirtualSet) {
+        state = .exploringScene
+        
+        arView!.scene.addAnchor(set.set)
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScenePickerView: View {
     
-    var session: VSSession
+    @EnvironmentObject var session: VSSession
     
     var body: some View {
         VStack(alignment: .center) {
@@ -21,14 +21,17 @@ struct ScenePickerView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top){
-                    Image("charleyrivers")
-                        .resizable()
-                        .cornerRadius(10)
-                        .frame(width: 120, height: 120)
-                        .padding(10)
-                        .onTapGesture {
-                            session.state = .exploringScene
-                        }
+                    ForEach(session.bundleSets) { set in
+                        set.image
+                            .resizable()
+                            .cornerRadius(10)
+                            .frame(width: 120, height: 120)
+                            .scaledToFit()
+                            .padding(10)
+                            .onTapGesture {
+                                session.userDidPickSet(set)
+                            }
+                    }
                 }
             }
             .frame(height: 200)
@@ -39,6 +42,7 @@ struct ScenePickerView: View {
 
 struct ScenePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScenePickerView(session: VSSession())
+        ScenePickerView()
+            .environmentObject(VSSession())
     }
 }

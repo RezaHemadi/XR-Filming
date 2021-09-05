@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F525B47926E4A46400DB20B7 /* VirtualSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B47826E4A46400DB20B7 /* VirtualSet.swift */; };
 		F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC9C9826E23F7700B99BBC /* VSSession.swift */; };
 		F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */; };
 		F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F525B47826E4A46400DB20B7 /* VirtualSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSet.swift; sourceTree = "<group>"; };
 		F5BC9C9826E23F7700B99BBC /* VSSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSSession.swift; sourceTree = "<group>"; };
 		F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoreOptionsView.swift; path = VirtualSet/Views/VSControls/MoreOptionsView.swift; sourceTree = SOURCE_ROOT; };
 		F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSceneView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		F5CB9A1726E169CA003DE7A1 /* VirtualSet */ = {
 			isa = PBXGroup;
 			children = (
+				F525B47826E4A46400DB20B7 /* VirtualSet.swift */,
 				F5E4993D26E26BE30031FF9A /* VSSession */,
 				F5CB9A4C26E1FC7B003DE7A1 /* Views */,
 				F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */,
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F525B47926E4A46400DB20B7 /* VirtualSet.swift in Sources */,
 				F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */,
 				F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */,
 				F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */,

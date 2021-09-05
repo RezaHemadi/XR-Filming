@@ -35,7 +35,8 @@ struct ContentView : View {
             case .initializing:
                 Text("Initializing...")
             case .pickingSet:
-                ScenePickerView(session: session)
+                ScenePickerView()
+                    .environmentObject(session)
             case .exploringScene:
                 VSControlsView()
             }
