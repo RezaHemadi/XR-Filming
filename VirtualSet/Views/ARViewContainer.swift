@@ -31,7 +31,6 @@ extension ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
-        arView.debugOptions = [.showStatistics]
         
         // Capture the instantiated arView to access when app state changes
         session.arView = arView

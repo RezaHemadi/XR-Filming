@@ -14,36 +14,7 @@ struct VSControlsView: View {
     
     // MARK: - View
     var body: some View {
-        if orientation.isPortrait {
-            // Portrait Orientation
-            // Vertical Stack to hold top and bottom screen controls
-            VStack{
-                // Horizontal Stack containing Top Screen Controls
-                HStack(alignment: .top){
-                    ChangeSceneView()
-                    
-                    Spacer()
-                    
-                    MoreOptionsView()
-                        .padding(.top, 15)
-                }
-                .padding(.all, 15)
-                
-                Spacer()
-                
-                // Horizontal Stack Containing Bottom Screen Controls
-                HStack(spacing: 50){
-                    AddItemView()
-                    
-                    RecordView(isRecording: $session.isRecording, isLandspace: orientation.isLandscape)
-                
-                    SnapshotView()
-                }
-            }
-            .onRotate { newOrientation in
-                orientation = newOrientation
-            }
-        } else if orientation.isLandscape {
+        if orientation.isLandscape {
             // Landscape Orientation
             HStack{
                 
@@ -72,7 +43,37 @@ struct VSControlsView: View {
                 orientation = newOrientation
             }
         } else {
-            EmptyView()
+            // Portrait Orientation
+            // Vertical Stack to hold top and bottom screen controls
+            VStack{
+                // Horizontal Stack containing Top Screen Controls
+                HStack(alignment: .top){
+                    ChangeSceneView()
+                        .onTapGesture {
+                            session.state = .pickingSet
+                        }
+                    
+                    Spacer()
+                    
+                    MoreOptionsView()
+                        .padding(.top, 15)
+                }
+                .padding(.all, 15)
+                
+                Spacer()
+                
+                // Horizontal Stack Containing Bottom Screen Controls
+                HStack(spacing: 50){
+                    AddItemView()
+                    
+                    RecordView(isRecording: $session.isRecording, isLandspace: orientation.isLandscape)
+                
+                    SnapshotView()
+                }
+            }
+            .onRotate { newOrientation in
+                orientation = newOrientation
+            }
         }
     }
 }

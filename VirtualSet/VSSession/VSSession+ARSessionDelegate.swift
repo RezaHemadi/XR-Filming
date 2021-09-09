@@ -33,9 +33,6 @@ extension VSSession: ARSessionDelegate {
             isTrackingNormal = false
         case .limited(let _):
             isTrackingNormal = false
-            if state == .initializing {
-                state = .pickingSet
-            }
         case .normal:
             isTrackingNormal = true
         }
@@ -59,5 +56,7 @@ extension VSSession: ARSessionDelegate {
         } else {
             surfaceDetected = false
         }
+        
+        recorder?.update(frame)
     }
 }

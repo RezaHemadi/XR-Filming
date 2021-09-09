@@ -12,16 +12,35 @@ import ARKit
 import os.signpost
 import SwiftUI
 
+typealias Stage = Entity & HasAnchoring
+
 /// - Tag: Virtual Set Session Class
 final class VSSession: NSObject, ObservableObject {
     // MARK: - Properties
+    var sceneLoader: SceneLoader
+    var recorder: Recorder!
     
     /// Reflects the current state of the user experience to update the user interface accordingly
-    @Published var state: State = .initializing {
+    @Published var state: State = .pickingSet {
         didSet {
             guard oldValue != state else { return }
             
             configureARSession(state)
+            
+            switch state {
+            case .initializing:
+                break
+            case .pickingSet:
+                if oldValue == .exploringScene {
+                    // User Wants To Change The Scene
+                    if let arView = self.arView, let current = activeStage {
+                        arView.scene.removeAnchor(current)
+                        activeStage = nil
+                    }
+                }
+            case .exploringScene:
+                recorder = Recorder(view: arView!, isRecording: $isRecording)
+            }
         }
     }
     
@@ -39,9 +58,6 @@ final class VSSession: NSObject, ObservableObject {
         }
     }
     
-    /// Array of Scenes included in the bundle
-    @Published var bundleSets = [VirtualSet]()
-    
     /// determine whether AR Session should attempt relocalization
     var shouldAttemptRelocalization: Bool {
         true
@@ -51,13 +67,13 @@ final class VSSession: NSObject, ObservableObject {
     var uiCoachingView: ARCoachingOverlayView?
     var surfaceDetected: Bool = false {
         didSet {
-            os_log(.info, "surface detected: %s", "\(surfaceDetected)")
+            guard oldValue != surfaceDetected else { return }
             shouldShowCoachingOverlay = !(surfaceDetected && isTrackingNormal)
         }
     }
     var isTrackingNormal: Bool = false {
         didSet {
-            os_log(.info, "is tracking normal: %s", "\(isTrackingNormal)")
+            guard oldValue != isTrackingNormal else { return }
             shouldShowCoachingOverlay = !(surfaceDetected && isTrackingNormal)
         }
     }
@@ -65,35 +81,21 @@ final class VSSession: NSObject, ObservableObject {
     @Published var shouldShowCoachingOverlay: Bool = false {
         didSet {
             guard oldValue != shouldShowCoachingOverlay else { return }
-            
-            os_log(.info, "should show coaching overlay: %s", "\(shouldShowCoachingOverlay)")
-            
             uiCoachingView?.setActive(shouldShowCoachingOverlay, animated: true)
         }
     }
     
+    /// Keeps track of currently active
+    var activeStage: Stage?
+    
     // MARK: - Initializatin
     override init() {
-        super.init()
+        sceneLoader = SceneLoader()
         
-        loadBundleScenes()
+        super.init()
     }
     
     // MARK: - Methods
-    private func loadBundleScenes() {
-        Experience.loadSceneOneAsync { result in
-            switch result {
-            case .success(let sceneOne):
-                let set = VirtualSet(image: Image("SceneOne"), set: sceneOne)
-                self.bundleSets.append(set)
-                
-            case .failure(let error):
-                os_log(.error, "error loading scene one from app bundle: %s", "\(error.localizedDescription)")
-                return
-            }
-        }
-    }
-    
     private func configureARSession(_ state: State) {
         guard let session = arView?.session else { return }
         
@@ -106,15 +108,24 @@ final class VSSession: NSObject, ObservableObject {
             session.run(configuration, options: options)
         case .exploringScene:
             configuration.frameSemantics = .personSegmentationWithDepth
+            //configuration.sceneReconstruction = .mesh
+            //arView?.environment.sceneUnderstanding.options.insert([.occlusion])
             session.run(configuration, options: options)
         }
+        
+        let resolution = configuration.videoFormat.imageResolution
+        os_log(.info, "captured video resolution:\n%s", "\(resolution)")
     }
     
     // MARK: - User Interaction
-    func userDidPickSet(_ set: VirtualSet) {
+    func userDidPickSet(_ set: BundleVirtualSet) {
         state = .exploringScene
-        
-        arView!.scene.addAnchor(set.set)
+        sceneLoader.loadBundleSet(set) { entity, error in
+            guard error == nil, let entity = entity else { return }
+            
+            self.arView?.scene.addAnchor(entity)
+            self.activeStage = entity
+        }
     }
 }
 

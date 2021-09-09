@@ -23,5 +23,15 @@
     "libraryIdentifier" : "5225e6af6a8cd8620e237c904c9ba8ee",
     "format" : "model",
     "displayName" : "Japanese_Room.usdz"
+  },
+  {
+    "libraryIdentifier" : "b0ce1ee936f68e14c39b0a388d73102d",
+    "format" : "model",
+    "displayName" : "Dynamic Stacks.usdz"
+  },
+  {
+    "libraryIdentifier" : "492ca681e5ad9842173125fec9e47b4c",
+    "format" : "model",
+    "displayName" : "Dome GamelikeScene.usdz"
   }
 ]

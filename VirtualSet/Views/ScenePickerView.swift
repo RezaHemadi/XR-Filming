@@ -21,8 +21,8 @@ struct ScenePickerView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top){
-                    ForEach(session.bundleSets) { set in
-                        set.image
+                    ForEach(session.sceneLoader.bundleVirtualSets) { set in
+                        Image(set.name)
                             .resizable()
                             .cornerRadius(10)
                             .frame(width: 120, height: 120)

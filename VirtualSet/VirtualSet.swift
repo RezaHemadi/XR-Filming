@@ -14,7 +14,5 @@ struct VirtualSet: Identifiable {
     
     var set: Entity & HasAnchoring
     
-    var id: String {
-        self.set.name
-    }
+    var id: Int
 }
