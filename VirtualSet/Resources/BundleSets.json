@@ -10,5 +10,13 @@
     {
         "id": 3,
         "name": "Dome"
+    },
+    {
+        "id": 4,
+        "name": "Dancer"
+    },
+    {
+        "id": 5,
+        "name": "DomeDancer"
     }
 ]

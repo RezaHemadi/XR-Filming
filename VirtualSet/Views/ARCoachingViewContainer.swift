@@ -27,7 +27,6 @@ extension ARCoachingViewContainer: UIViewRepresentable {
         let coachingOverlay = ARCoachingOverlayView()
         coachingOverlay.activatesAutomatically = false
         coachingOverlay.session = context.coordinator.parent.session.arView!.session
-        coachingOverlay.setActive(true, animated: false)
         session.uiCoachingView = coachingOverlay
         
         return coachingOverlay

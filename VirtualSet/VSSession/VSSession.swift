@@ -21,10 +21,8 @@ final class VSSession: NSObject, ObservableObject {
     var recorder: Recorder!
     
     /// Reflects the current state of the user experience to update the user interface accordingly
-    @Published var state: State = .pickingSet {
+    @Published var state: State = .initializing {
         didSet {
-            guard oldValue != state else { return }
-            
             configureARSession(state)
             
             switch state {
@@ -46,6 +44,8 @@ final class VSSession: NSObject, ObservableObject {
     
     /// Keep track of recording status
     @Published var isRecording: Bool = false
+    
+    private var streams = [AnyCancellable]()
     
     /// View That Renders AR Content
     var arView: ARView? {
@@ -93,6 +93,11 @@ final class VSSession: NSObject, ObservableObject {
         sceneLoader = SceneLoader()
         
         super.init()
+        
+        let stream = sceneLoader.$bundleVirtualSets.sink { sets in
+            self.state = .pickingSet
+        }
+        stream.store(in: &streams)
     }
     
     // MARK: - Methods

@@ -15,6 +15,7 @@
 		F57619CA26E642AF00C144D9 /* BundleSets.json in Resources */ = {isa = PBXBuildFile; fileRef = F525B4BC26E610A400DB20B7 /* BundleSets.json */; };
 		F57619CC26E6975600C144D9 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57619CB26E6975600C144D9 /* Recorder.swift */; };
 		F57619D426E8905D00C144D9 /* CGImage+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57619D326E8905D00C144D9 /* CGImage+Utilities.swift */; };
+		F5AE187D26EA857300B25DB7 /* MTLTexture+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */; };
 		F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC9C9826E23F7700B99BBC /* VSSession.swift */; };
 		F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */; };
 		F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */; };
@@ -62,6 +63,7 @@
 		F57619C826E63D9800C144D9 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		F57619CB26E6975600C144D9 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = SOURCE_ROOT; };
 		F57619D326E8905D00C144D9 /* CGImage+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Utilities.swift"; sourceTree = "<group>"; };
+		F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Utilities.swift"; sourceTree = "<group>"; };
 		F5BC9C9826E23F7700B99BBC /* VSSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSSession.swift; sourceTree = "<group>"; };
 		F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoreOptionsView.swift; path = VirtualSet/Views/VSControls/MoreOptionsView.swift; sourceTree = SOURCE_ROOT; };
 		F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSceneView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F57619D326E8905D00C144D9 /* CGImage+Utilities.swift */,
+				F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5AE187D26EA857300B25DB7 /* MTLTexture+Utilities.swift in Sources */,
 				F525B47926E4A46400DB20B7 /* VirtualSet.swift in Sources */,
 				F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */,
 				F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */,
