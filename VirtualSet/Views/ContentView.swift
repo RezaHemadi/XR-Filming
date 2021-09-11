@@ -11,6 +11,7 @@ import RealityKit
 struct ContentView : View {
     // MARK: - Properties
     @EnvironmentObject var session: VSSession
+    static let backgroundGray: Color = Color(white: 70.0/255.0)
     
     var dimBackground: Bool {
         switch session.state {
@@ -24,26 +25,23 @@ struct ContentView : View {
     var body: some View {
         ZStack{
             ARViewContainer(session: session)
+                .opacity(dimBackground ? 0.17 : 1.0)
                 .edgesIgnoringSafeArea(.all)
-            
+            /*
             if dimBackground {
                 Color.gray.opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
-            }
+            }*/
             
-            switch session.state {
-            case .initializing:
-                Text("Initializing...")
-            case .pickingSet:
-                ScenePickerView(session: session)
-            case .exploringScene:
-                VSControlsView()
-            }
+            MainView()
+                .environmentObject(session)
             
             if session.shouldShowCoachingOverlay, let coachingView = session.coachingOverlay {
                 coachingView
             }
         }
+        .background(Self.backgroundGray)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

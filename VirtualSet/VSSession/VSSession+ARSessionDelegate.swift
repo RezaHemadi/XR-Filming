@@ -56,7 +56,5 @@ extension VSSession: ARSessionDelegate {
         } else {
             surfaceDetected = false
         }
-        
-        recorder?.update(frame)
     }
 }

@@ -11,7 +11,7 @@ import Combine
 import os.signpost
 
 /// - Tag: Object Responsible for Loading Virtual Scenes From App Bundle Or Remote Server
-class SceneLoader {
+class SceneLoader: ObservableObject {
     // MARK: - Properties
     
     /// scenes included in the app bundle
@@ -40,7 +40,7 @@ class SceneLoader {
     private func loadRealityComposerSceneAsync (filename: String,
                                         fileExtension: String,
                                         sceneName: String,
-                                        completion: @escaping (Swift.Result<(Entity & HasAnchoring)?, Swift.Error>) -> Void) {
+                                        completion: @escaping (Swift.Result<Stage?, Swift.Error>) -> Void) {
         
         guard let realityFileSceneURL = SceneLoader.createRealityURL(filename: filename, fileExtension: fileExtension, sceneName: sceneName) else {
             print("Error: Unable to find specified file in application bundle")

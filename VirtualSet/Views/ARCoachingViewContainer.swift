@@ -26,7 +26,9 @@ extension ARCoachingViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARCoachingOverlayView {
         let coachingOverlay = ARCoachingOverlayView()
         coachingOverlay.activatesAutomatically = false
+        #if !targetEnvironment(simulator)
         coachingOverlay.session = context.coordinator.parent.session.arView!.session
+        #endif
         session.uiCoachingView = coachingOverlay
         
         return coachingOverlay

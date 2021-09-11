@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChangeSceneView: View {
     var body: some View {
-        Image("ChangeScene")
+        Image("ActionIcon")
             .resizable()
             .frame(width: 60, height: 60)
     }

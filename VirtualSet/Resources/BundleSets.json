@@ -1,22 +1,50 @@
 [
     {
         "id": 1,
-        "name": "ComputerTable"
+        "name": "DynamicStacks"
     },
     {
         "id": 2,
-        "name": "DynamicStacksStage"
+        "name": "BikiniDancer"
     },
     {
         "id": 3,
-        "name": "Dome"
+        "name": "Bar"
     },
     {
         "id": 4,
-        "name": "Dancer"
+        "name": "VanGoghBedroom"
     },
     {
         "id": 5,
-        "name": "DomeDancer"
+        "name": "DynamicStacksStage"
+    },
+    {
+        "id": 6,
+        "name": "HipHopDancer"
+    },
+    {
+        "id": 7,
+        "name": "PsychoRoom"
+    },
+    {
+        "id": 8,
+        "name": "ScannedRoom"
+    },
+    {
+        "id": 9,
+        "name": "ScifiNightclub"
+    },
+    {
+        "id": 10,
+        "name": "VictorianRoom"
+    },
+    {
+        "id": 11,
+        "name": "MagicRoom"
+    },
+    {
+        "id": 12,
+        "name": "TwoPersonStage"
     }
 ]

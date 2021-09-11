@@ -21,6 +21,9 @@ struct VSControlsView: View {
                 // Vertical Stack Containing Left Screen
                 VStack{
                     ChangeSceneView()
+                        .onTapGesture {
+                            session.state = .pickingSet
+                        }
                     
                     Spacer()
                     

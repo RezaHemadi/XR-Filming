@@ -12,6 +12,7 @@ import ARKit
 import os.signpost
 import SwiftUI
 
+
 typealias Stage = Entity & HasAnchoring
 
 /// - Tag: Virtual Set Session Class
@@ -21,7 +22,7 @@ final class VSSession: NSObject, ObservableObject {
     var recorder: Recorder!
     
     /// Reflects the current state of the user experience to update the user interface accordingly
-    @Published var state: State = .initializing {
+    @Published var state: SessionState = .initializing {
         didSet {
             configureARSession(state)
             
@@ -37,7 +38,9 @@ final class VSSession: NSObject, ObservableObject {
                     }
                 }
             case .exploringScene:
-                recorder = Recorder(view: arView!, isRecording: $isRecording)
+                if recorder == nil {
+                    recorder = Recorder(view: arView!, isRecording: $isRecording)
+                }
             }
         }
     }
@@ -52,7 +55,11 @@ final class VSSession: NSObject, ObservableObject {
         didSet {
             guard oldValue != arView else { return }
             
+            #if !targetEnvironment(simulator)
+            
             arView?.session.delegate = self
+            
+            #endif
             configureARSession(state)
             coachingOverlay = ARCoachingViewContainer(session: self)
         }
@@ -64,14 +71,20 @@ final class VSSession: NSObject, ObservableObject {
     }
     
     var coachingOverlay: ARCoachingViewContainer?
-    var uiCoachingView: ARCoachingOverlayView?
+    var uiCoachingView: ARCoachingOverlayView? {
+        didSet {
+            if let overlay = uiCoachingView {
+                overlay.setActive(shouldShowCoachingOverlay, animated: false)
+            }
+        }
+    }
     var surfaceDetected: Bool = false {
         didSet {
             guard oldValue != surfaceDetected else { return }
             shouldShowCoachingOverlay = !(surfaceDetected && isTrackingNormal)
         }
     }
-    var isTrackingNormal: Bool = false {
+    var isTrackingNormal: Bool = true {
         didSet {
             guard oldValue != isTrackingNormal else { return }
             shouldShowCoachingOverlay = !(surfaceDetected && isTrackingNormal)
@@ -81,7 +94,7 @@ final class VSSession: NSObject, ObservableObject {
     @Published var shouldShowCoachingOverlay: Bool = false {
         didSet {
             guard oldValue != shouldShowCoachingOverlay else { return }
-            uiCoachingView?.setActive(shouldShowCoachingOverlay, animated: true)
+            uiCoachingView?.setActive(shouldShowCoachingOverlay, animated: false)
         }
     }
     
@@ -101,8 +114,12 @@ final class VSSession: NSObject, ObservableObject {
     }
     
     // MARK: - Methods
-    private func configureARSession(_ state: State) {
+    private func configureARSession(_ state: SessionState) {
+        #if !targetEnvironment(simulator)
+        
         guard let session = arView?.session else { return }
+        
+        #endif
         
         let configuration = ARWorldTrackingConfiguration()
         let options: ARSession.RunOptions = []
@@ -110,16 +127,23 @@ final class VSSession: NSObject, ObservableObject {
         switch state {
         case .initializing, .pickingSet:
             configuration.planeDetection = [.horizontal]
+            
+            #if !targetEnvironment(simulator)
             session.run(configuration, options: options)
+            #endif
+            
         case .exploringScene:
             configuration.frameSemantics = .personSegmentationWithDepth
             //configuration.sceneReconstruction = .mesh
             //arView?.environment.sceneUnderstanding.options.insert([.occlusion])
+            #if !targetEnvironment(simulator)
             session.run(configuration, options: options)
+            #endif
         }
         
-        let resolution = configuration.videoFormat.imageResolution
-        os_log(.info, "captured video resolution:\n%s", "\(resolution)")
+        #if !targetEnvironment(simulator)
+        uiCoachingView?.session = session
+        #endif
     }
     
     // MARK: - User Interaction
@@ -136,7 +160,7 @@ final class VSSession: NSObject, ObservableObject {
 
 // MARK: - Types
 extension VSSession {
-    enum State {
+    enum SessionState {
         case initializing
         case pickingSet
         case exploringScene

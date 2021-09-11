@@ -14,8 +14,13 @@ import os.signpost
 import QuartzCore
 import CoreGraphics
 
+enum RecorderError: Error {
+    case pixelBufferError(description: String, status: CVReturn)
+}
+
 /// - Tag: Recorder Object responsible for recording video of AR Session
 class Recorder: NSObject {
+    
     // MARK: - Properties
     
     /// object that writes video frames to output url
@@ -70,23 +75,41 @@ class Recorder: NSObject {
     /// Keep Track Of Recorded Frame Count
     var videoFrame: Int = 1
     
+    var pixelBuffer: CVPixelBuffer?
+    var pixelBytesPerRow: Int = 0
+    var queue: DispatchQueue = DispatchQueue.init(label: "myQueue")
+    var startedAt: Double?
+    var elapsed: Double = 0
+    
     // MARK: - Initialization
-    init(view: ARView, isRecording: Published<Bool>.Publisher) {
+    init?(view: ARView, isRecording: Published<Bool>.Publisher) {
         self.arView = view
         super.init()
         
         createDisplayLink()
         
         outputURL = makeOutputURL(fileName: "myMovie.mov")
-        setupWriter()
         subscribeToIsRecording(isRecording: isRecording)
+        do {
+            try setupPixelBuffer()
+        } catch {
+            return nil
+        }
+        setupWriter()
     }
     
     // MARK: - Methods
+    private func setupPixelBuffer() throws {
+        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(size.width), Int(size.height), kCVPixelFormatType_32BGRA, nil, &self.pixelBuffer)
+        guard status == kCVReturnSuccess else {
+            throw RecorderError.pixelBufferError(description: "failed to initialize pixel buffer.", status: status)
+        }
+        pixelBytesPerRow = CVPixelBufferGetBytesPerRow(self.pixelBuffer!)
+    }
+    
     func createDisplayLink() {
         let displaylink = CADisplayLink(target: self,
                                         selector: #selector(step))
-        
         displaylink.add(to: .current,
                         forMode: RunLoop.Mode.default)
     }
@@ -94,27 +117,24 @@ class Recorder: NSObject {
     @objc
     func step(displaylink: CADisplayLink) {
         guard isRecording else { return }
-        
-        self.frameCount += 1
-        
-        
-        
-        guard (frameCount % 2) == 0 else { return }
-        
-        DispatchQueue.main.async {
-            UIGraphicsBeginImageContextWithOptions(self.size, true, 0)
-            self.arView.drawHierarchy(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height), afterScreenUpdates: false)
-            let snapshot = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            
-            let buffer = snapshot.cgImage!.makePixelBuffer()!
-
-            
-            let timeScale = CMTimeScale(60)
-            let presentationTime = CMTime(value: CMTimeValue(self.frameCount), timescale: timeScale)
-            self.adoptor.append(buffer, withPresentationTime: presentationTime)
+        if startedAt == nil {
+            startedAt = displaylink.timestamp
         }
-        self.videoFrame += 1
+        frameCount += 1
+        //guard (frameCount % 2) == 0 else { return }
+        
+        DispatchQueue.main.async { [self] in
+            UIGraphicsBeginImageContext(size)
+            let rect = arView.bounds
+            arView.drawHierarchy(in: rect, afterScreenUpdates: false)
+            let image = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            let buffer = image.cgImage!.makePixelBuffer()
+            elapsed = displaylink.timestamp - startedAt!
+            let scale = CMTimeScale(NSEC_PER_SEC)
+            let presentationTime = CMTime(value: CMTimeValue(elapsed * Double(scale)), timescale: scale)
+            adoptor.append(buffer!, withPresentationTime: presentationTime)
+        }
     }
     
     /// Subscribe to Client's isRecording Publisheer to Start Recording or Stop Once it's Toggled
@@ -173,27 +193,6 @@ class Recorder: NSObject {
         guard writer != nil, writerInput != nil, adoptor != nil else { fatalError("could not initialize writer assets")}
     }
     
-    private func enableBuiltInMicrophone() {
-        let session = AVAudioSession.sharedInstance()
-        
-        guard let availableInputs = session.availableInputs,
-              let builtInMicrophone = availableInputs.first(where: { $0.portType == .builtInMic })
-        else {
-            os_log(.info, "the device must have a built in microphone.")
-            return
-        }
-        
-        do {
-            try session.setPreferredInput(builtInMicrophone)
-        } catch {
-            os_log(.error, "error setting up microphone: %s", "\(error.localizedDescription)")
-        }
-    }
-    
-    private func setupAudioSession() {
-        
-    }
-    
     /// Start Recording Video
     private func startRecording() {
         startAudioCapture()
@@ -203,10 +202,12 @@ class Recorder: NSObject {
     
     /// Stop Recording Video
     private func stopRecording() {
-        audioAssetWriterInput.markAsFinished()
-        writerInput.markAsFinished()
-        writer.finishWriting {
-            UISaveVideoAtPathToSavedPhotosAlbum(self.outputURL!.path, self, #selector(self.videoSaveCompletion(video:didFinishSavingWithError:contextInfo:)), nil)
+        self.audioAssetWriterInput.markAsFinished()
+        queue.async { [self] in
+            writerInput.markAsFinished()
+            writer.finishWriting {
+                        UISaveVideoAtPathToSavedPhotosAlbum(self.outputURL!.path, self, #selector(self.videoSaveCompletion(video:didFinishSavingWithError:contextInfo:)), nil)
+            }
         }
     }
     
@@ -214,6 +215,7 @@ class Recorder: NSObject {
     func videoSaveCompletion(video: NSString, didFinishSavingWithError: NSError?, contextInfo: UnsafeRawPointer?) {
         self.outputURL = self.makeOutputURL(fileName: "myMovie.mov")
         self.setupWriter()
+        startedAt = nil
         self.videoFrame = 0
     }
     
@@ -231,65 +233,11 @@ class Recorder: NSObject {
             os_log(.error, "error setting up audio input")
         }
     }
-    
-    /// Called By The Client Every Time A new AR Frame is Processed By The Graphics Renderer
-    func update(_ frame: ARFrame) {
-        /*
-        guard isRecording else { return }
-        
-        self.frameCount += 1
-        
-        
-        
-        //guard (frameCount % 2) != 0 else { return }
-        
-        if let texture = self.lastDrawableDisplayed?.texture {
-            CVPixelBufferLockBaseAddress(self.pixelBuffer, [])
-            let pixelBufferBytes = CVPixelBufferGetBaseAddress( self.pixelBuffer )!
-
-            texture.getBytes(pixelBufferBytes, bytesPerRow: self.bytesPerRow, from: self.region, mipmapLevel: 0)
-            CVPixelBufferUnlockBaseAddress(self.pixelBuffer, [])
-            
-            let timeScale = CMTimeScale(30)
-            let presentationTime = CMTime(value: CMTimeValue(self.videoFrame), timescale: timeScale)
-            self.adoptor.append(self.pixelBuffer, withPresentationTime: presentationTime)
-            self.videoFrame += 1
-        }
-        
-        DispatchQueue.main.async {
-            
-            /*
-            UIGraphicsBeginImageContextWithOptions(self.size, true, 0)
-            self.arView.drawHierarchy(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height), afterScreenUpdates: false)
-            let renderView = self.arView.subviews.first!
-            let context = UIGraphicsGetCurrentContext()
-            let metalLayer = renderView.layer as! CAMetalLayer
-            let snapshot = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            
-            let buffer = snapshot.cgImage!.makePixelBuffer()!
- 
-            let texture = self.lastDrawableDisplayed!.texture
-            var buffer: CVPixelBuffer?
-            if var data = self.lastDrawableDisplayed?.texture.buffer?.contents() {
-                CVPixelBufferCreateWithBytes(kCFAllocatorDefault, texture.width, texture.height, kCVPixelFormatType_32ARGB, &data, texture.bufferBytesPerRow, nil, nil, nil, &buffer)
-            }
-            
-            let timeScale = CMTimeScale(30)
-            let presentationTime = CMTime(value: CMTimeValue(self.videoFrame), timescale: timeScale)
-            self.adoptor.append(buffer!, withPresentationTime: presentationTime)
-            self.videoFrame += 1
- */
-        }
-        lastDrawableDisplayed = (arView.subviews.first!.layer as! CAMetalLayer).nextDrawable()
- */
-    }
 }
 
 extension Recorder: AVCaptureAudioDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard isRecording else { return }
-        guard (frameCount % 2) == 0 else { return }
         
         var count: CMItemCount = 0
         CMSampleBufferGetSampleTimingInfoArray(sampleBuffer, entryCount: count, arrayToFill: nil, entriesNeededOut: &count)
@@ -301,8 +249,9 @@ extension Recorder: AVCaptureAudioDataOutputSampleBufferDelegate {
                                                entryCount: count,
                                                arrayToFill: &info,
                                                entriesNeededOut: &count)
-        let timeScale = CMTimeScale(60)
-        let presentationTime = CMTime(value: CMTimeValue(self.frameCount), timescale: timeScale)
+        
+        let scale = CMTimeScale(NSEC_PER_SEC)
+        let presentationTime = CMTime(value: CMTimeValue(elapsed * Double(scale)), timescale: scale)
         
         for i in 0..<count {
             info[i].decodeTimeStamp = presentationTime
