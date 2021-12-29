@@ -3,21 +3,72 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2770E964EC2AF65204986326 /* Pods_VirtualSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2158D641275ADE07166B251F /* Pods_VirtualSet.framework */; };
+		F50B500A27735AAD00F58C18 /* VSSession+ARCoachingOverlayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B500927735AAD00F58C18 /* VSSession+ARCoachingOverlayDelegate.swift */; };
+		F50B500C27735CF700F58C18 /* ARViewRenderer+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B500B27735CF700F58C18 /* ARViewRenderer+ARSessionDelegate.swift */; };
+		F51FF92D273F958400CCFABB /* StageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51FF92C273F958400CCFABB /* StageInfo.swift */; };
+		F51FF92F273FA36700CCFABB /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51FF92E273FA36700CCFABB /* String+Helpers.swift */; };
 		F525B47D26E4CFA000DB20B7 /* ARCoachingViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B47C26E4CFA000DB20B7 /* ARCoachingViewContainer.swift */; };
 		F525B4B926E5D43D00DB20B7 /* SceneLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B4B826E5D43D00DB20B7 /* SceneLoader.swift */; };
+		F52EB8672711C3F60009C272 /* ButtonGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52EB8662711C3F50009C272 /* ButtonGradientColors.swift */; };
+		F52EB869271236F10009C272 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52EB868271236F10009C272 /* TipView.swift */; };
+		F53BEA71275CB5950079B681 /* ServerStageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53BEA70275CB5950079B681 /* ServerStageCellView.swift */; };
+		F541A4B4270DB67600454C5B /* HintReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541A4B3270DB67600454C5B /* HintReplyView.swift */; };
+		F541A4B6270DE9FF00454C5B /* AnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541A4B5270DE9FF00454C5B /* AnnouncementView.swift */; };
+		F541A4B8270E19D900454C5B /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541A4B7270E19D900454C5B /* PhotoPickerView.swift */; };
+		F543BE652732B0F0004776CC /* Empty Set.reality in Resources */ = {isa = PBXBuildFile; fileRef = F543BE642732B0F0004776CC /* Empty Set.reality */; };
 		F558862E26ECA5640055886D /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558862D26ECA5640055886D /* SearchBarView.swift */; };
 		F558863026ECAB580055886D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558862F26ECAB580055886D /* MainView.swift */; };
 		F558863226ECD6070055886D /* View+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558863126ECD6070055886D /* View+HideKeyboard.swift */; };
+		F558863426ECE53B0055886D /* SetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558863326ECE53B0055886D /* SetCellView.swift */; };
+		F558863626ECFE490055886D /* SetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558863526ECFE490055886D /* SetDetailView.swift */; };
+		F55B42F6273E59600033E7C2 /* VSSession+WatchSessionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B42F5273E59600033E7C2 /* VSSession+WatchSessionDataSource.swift */; };
+		F55B42F8273E59900033E7C2 /* VSSession+WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B42F7273E59900033E7C2 /* VSSession+WatchSessionDelegate.swift */; };
+		F55B42FA273E6A4B0033E7C2 /* VSSession+ARViewRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B42F9273E6A4B0033E7C2 /* VSSession+ARViewRendererDelegate.swift */; };
+		F55DA14927367F1500AD27A1 /* PFVirtualStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DA14827367F1500AD27A1 /* PFVirtualStage.swift */; };
+		F55DA14B27368AB100AD27A1 /* VirtualStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DA14A27368AB100AD27A1 /* VirtualStage.swift */; };
+		F561A3EB2743DFAA00D677AC /* VideoFeedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF0BD727417A5F00512F7C /* VideoFeedScene.swift */; };
+		F56DF050273DA35900A89631 /* SyncCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DF04F273DA35900A89631 /* SyncCommand.swift */; };
+		F56DF051273DA36300A89631 /* SyncCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DF04F273DA35900A89631 /* SyncCommand.swift */; };
 		F57619C726E63D6000C144D9 /* BundleVirtualSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57619C626E63D6000C144D9 /* BundleVirtualSet.swift */; };
 		F57619C926E63D9800C144D9 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57619C826E63D9800C144D9 /* Load.swift */; };
 		F57619CA26E642AF00C144D9 /* BundleSets.json in Resources */ = {isa = PBXBuildFile; fileRef = F525B4BC26E610A400DB20B7 /* BundleSets.json */; };
 		F57619CC26E6975600C144D9 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57619CB26E6975600C144D9 /* Recorder.swift */; };
 		F57619D426E8905D00C144D9 /* CGImage+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57619D326E8905D00C144D9 /* CGImage+Utilities.swift */; };
+		F577D6C02709A89500D44CC1 /* ARViewRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577D6BF2709A89500D44CC1 /* ARViewRenderer.swift */; };
+		F577D6C22709F79500D44CC1 /* SwiftUI+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577D6C12709F79500D44CC1 /* SwiftUI+Helpers.swift */; };
+		F57933F72771FCED00D1B0F1 /* MTLTexture+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57933F62771FCED00D1B0F1 /* MTLTexture+Helpers.swift */; };
+		F5887B7F26FB1DA6008F9DF8 /* ARPlaneAnchor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5887B7E26FB1DA6008F9DF8 /* ARPlaneAnchor+Utilities.swift */; };
+		F5887BB426FC6E17008F9DF8 /* MathUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5887BB326FC6E17008F9DF8 /* MathUtilities.swift */; };
+		F58CECFF275653070043CB67 /* London Bridge Alcove Guy's Campus.reality in Resources */ = {isa = PBXBuildFile; fileRef = F58CECFE275653070043CB67 /* London Bridge Alcove Guy's Campus.reality */; };
+		F58CED05275656E30043CB67 /* spaichingen_hill_4k.exr in Resources */ = {isa = PBXBuildFile; fileRef = F58CED04275656E30043CB67 /* spaichingen_hill_4k.exr */; };
+		F58DF6992732D18700F09314 /* EarthMoon.reality in Resources */ = {isa = PBXBuildFile; fileRef = F58DF6982732D18600F09314 /* EarthMoon.reality */; };
+		F58DF6AF2733018000F09314 /* Scifi Corridor.reality in Resources */ = {isa = PBXBuildFile; fileRef = F58DF6AE2733018000F09314 /* Scifi Corridor.reality */; };
+		F59815352736903300EDE0B3 /* SetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59815342736903300EDE0B3 /* SetPreview.swift */; };
+		F59F93C4270A3E2700AE4771 /* VSRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59F93C3270A3E2700AE4771 /* VSRenderer.swift */; };
+		F5A1D7A026F9EA84000A32A7 /* MTKViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D79F26F9EA84000A32A7 /* MTKViewContainer.swift */; };
+		F5A1D7A726F9EB2C000A32A7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D7A626F9EB2C000A32A7 /* Shaders.metal */; };
+		F5A1D7A926FA19CB000A32A7 /* VideoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D7A826FA19CB000A32A7 /* VideoResolution.swift */; };
+		F5A2A976277C4AE700E692F3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D79B26F9EA43000A32A7 /* Renderer.swift */; };
+		F5A2A977277C4AEA00E692F3 /* RenderDestinationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D79D26F9EA63000A32A7 /* RenderDestinationProvider.swift */; };
+		F5A2A978277C4AED00E692F3 /* SDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5887B8326FB6613008F9DF8 /* SDModel.swift */; };
+		F5A2A979277C4AF000E692F3 /* SDMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5887BA926FBC1C2008F9DF8 /* SDMesh.swift */; };
+		F5A2A97A277C4AF200E692F3 /* SDTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53CC73E2700871800484D8E /* SDTransform.swift */; };
+		F5A43CCE270C44D8008B4650 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CCD270C44D8008B4650 /* IntroView.swift */; };
+		F5A43CD0270CAFD8008B4650 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CCF270CAFD7008B4650 /* AddImageView.swift */; };
+		F5A43CD2270CD489008B4650 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CD1270CD489008B4650 /* LoadingView.swift */; };
+		F5A43CD4270CDE11008B4650 /* DialogueBoxParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CD3270CDE11008B4650 /* DialogueBoxParameters.swift */; };
+		F5A43CD6270CDED2008B4650 /* DialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CD5270CDED2008B4650 /* DialogueView.swift */; };
+		F5A43CD8270CE5F3008B4650 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CD7270CE5F2008B4650 /* Hint.swift */; };
+		F5ADD354273A7EFA00FA8EDB /* PFVideoRecordings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ADD353273A7EFA00FA8EDB /* PFVideoRecordings.swift */; };
+		F5ADD356273A87BC00FA8EDB /* PFSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ADD355273A87BC00FA8EDB /* PFSnapshot.swift */; };
+		F5ADD358273A89D500FA8EDB /* PFSearchedTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ADD357273A89D500FA8EDB /* PFSearchedTerm.swift */; };
 		F5AE187D26EA857300B25DB7 /* MTLTexture+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */; };
+		F5AF7423273D519E00B12FEE /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF7422273D519E00B12FEE /* TimerView.swift */; };
 		F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC9C9826E23F7700B99BBC /* VSSession.swift */; };
 		F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */; };
 		F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */; };
@@ -27,72 +78,174 @@
 		F5BDB24D26E3E1840021D382 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */; };
 		F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */; };
 		F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */; };
-		F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */; };
 		F5CB9A1F26E169CB003DE7A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CB9A1E26E169CB003DE7A1 /* Assets.xcassets */; };
 		F5CB9A2226E169CB003DE7A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CB9A2126E169CB003DE7A1 /* Preview Assets.xcassets */; };
-		F5CB9A2D26E169CB003DE7A1 /* VirtualSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A2C26E169CB003DE7A1 /* VirtualSetTests.swift */; };
-		F5CB9A3826E169CB003DE7A1 /* VirtualSetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A3726E169CB003DE7A1 /* VirtualSetUITests.swift */; };
-		F5CB9A4626E1F0BB003DE7A1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */; };
 		F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */; };
-		F5CF4D0126E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF4D0026E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift */; };
+		F5CF0BD827417A5F00512F7C /* VideoFeedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF0BD727417A5F00512F7C /* VideoFeedScene.swift */; };
 		F5CF4D0326E2822B008FE8D0 /* VSControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF4D0226E2822B008FE8D0 /* VSControlsView.swift */; };
+		F5DB62DE270B0E0E00B70369 /* VirtualSetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB62DD270B0E0E00B70369 /* VirtualSetConfiguration.swift */; };
+		F5DD7D29273874B4004A4221 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D28273874B4004A4221 /* NetworkErrorView.swift */; };
+		F5DD7D2F27391C02004A4221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DD7D2E27391C02004A4221 /* Assets.xcassets */; };
+		F5DD7D3527391C02004A4221 /* XRFilming WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F5DD7D3427391C02004A4221 /* XRFilming WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5DD7D3A27391C02004A4221 /* VirtualSetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D3927391C02004A4221 /* VirtualSetApp.swift */; };
+		F5DD7D3C27391C02004A4221 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D3B27391C02004A4221 /* ContentView.swift */; };
+		F5DD7D3E27391C02004A4221 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D3D27391C02004A4221 /* NotificationController.swift */; };
+		F5DD7D4027391C02004A4221 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D3F27391C02004A4221 /* NotificationView.swift */; };
+		F5DD7D4227391C02004A4221 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D4127391C02004A4221 /* ComplicationController.swift */; };
+		F5DD7D4427391C04004A4221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DD7D4327391C04004A4221 /* Assets.xcassets */; };
+		F5DD7D4727391C04004A4221 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DD7D4627391C04004A4221 /* Preview Assets.xcassets */; };
+		F5DD7D4C27391C04004A4221 /* XRFilming.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F5DD7D2C27391C01004A4221 /* XRFilming.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5DD7D562739237D004A4221 /* WatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D552739237D004A4221 /* WatchSession.swift */; };
+		F5DD7D582739273C004A4221 /* PhoneConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD7D572739273C004A4221 /* PhoneConnectivity.swift */; };
 		F5E4993C26E265210031FF9A /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4993B26E265210031FF9A /* ARViewContainer.swift */; };
+		F5F37B8D2710ECFC00CCFC9C /* RollingFilmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F37B8C2710ECFC00CCFC9C /* RollingFilmsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F5CB9A2926E169CB003DE7A1 /* PBXContainerItemProxy */ = {
+		F5DD7D3627391C02004A4221 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F5CB9A0D26E169CA003DE7A1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F5CB9A1426E169CA003DE7A1;
-			remoteInfo = VirtualSet;
+			remoteGlobalIDString = F5DD7D3327391C02004A4221;
+			remoteInfo = "XRFilming WatchKit Extension";
 		};
-		F5CB9A3426E169CB003DE7A1 /* PBXContainerItemProxy */ = {
+		F5DD7D4A27391C04004A4221 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F5CB9A0D26E169CA003DE7A1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F5CB9A1426E169CA003DE7A1;
-			remoteInfo = VirtualSet;
+			remoteGlobalIDString = F5DD7D2B27391C01004A4221;
+			remoteInfo = XRFilming;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F5DD7D5027391C04004A4221 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F5DD7D3527391C02004A4221 /* XRFilming WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5DD7D5427391C04004A4221 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F5DD7D4C27391C04004A4221 /* XRFilming.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2158D641275ADE07166B251F /* Pods_VirtualSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FD2391C37724DD97BB6ED83 /* Pods-VirtualSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSet.release.xcconfig"; path = "Target Support Files/Pods-VirtualSet/Pods-VirtualSet.release.xcconfig"; sourceTree = "<group>"; };
+		E34D9B34A2E06F86DD83E1B9 /* Pods-VirtualSet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSet.debug.xcconfig"; path = "Target Support Files/Pods-VirtualSet/Pods-VirtualSet.debug.xcconfig"; sourceTree = "<group>"; };
+		F50B500927735AAD00F58C18 /* VSSession+ARCoachingOverlayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSSession+ARCoachingOverlayDelegate.swift"; sourceTree = "<group>"; };
+		F50B500B27735CF700F58C18 /* ARViewRenderer+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewRenderer+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		F51FF92C273F958400CCFABB /* StageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageInfo.swift; sourceTree = "<group>"; };
+		F51FF92E273FA36700CCFABB /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		F525B47C26E4CFA000DB20B7 /* ARCoachingViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCoachingViewContainer.swift; sourceTree = "<group>"; };
 		F525B4B826E5D43D00DB20B7 /* SceneLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLoader.swift; sourceTree = "<group>"; };
 		F525B4BC26E610A400DB20B7 /* BundleSets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BundleSets.json; sourceTree = "<group>"; };
+		F52EB8662711C3F50009C272 /* ButtonGradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGradientColors.swift; sourceTree = "<group>"; };
+		F52EB868271236F10009C272 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
+		F53BEA70275CB5950079B681 /* ServerStageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStageCellView.swift; sourceTree = "<group>"; };
+		F53CC73E2700871800484D8E /* SDTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTransform.swift; sourceTree = "<group>"; };
+		F541A4B3270DB67600454C5B /* HintReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintReplyView.swift; sourceTree = "<group>"; };
+		F541A4B5270DE9FF00454C5B /* AnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
+		F541A4B7270E19D900454C5B /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
+		F543BE642732B0F0004776CC /* Empty Set.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Empty Set.reality"; sourceTree = "<group>"; };
 		F558862D26ECA5640055886D /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F558862F26ECAB580055886D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F558863126ECD6070055886D /* View+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideKeyboard.swift"; sourceTree = "<group>"; };
+		F558863326ECE53B0055886D /* SetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCellView.swift; sourceTree = "<group>"; };
+		F558863526ECFE490055886D /* SetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDetailView.swift; sourceTree = "<group>"; };
+		F55B42F5273E59600033E7C2 /* VSSession+WatchSessionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSSession+WatchSessionDataSource.swift"; sourceTree = "<group>"; };
+		F55B42F7273E59900033E7C2 /* VSSession+WatchSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSSession+WatchSessionDelegate.swift"; sourceTree = "<group>"; };
+		F55B42F9273E6A4B0033E7C2 /* VSSession+ARViewRendererDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSSession+ARViewRendererDelegate.swift"; sourceTree = "<group>"; };
+		F55DA14827367F1500AD27A1 /* PFVirtualStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFVirtualStage.swift; sourceTree = "<group>"; };
+		F55DA14A27368AB100AD27A1 /* VirtualStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualStage.swift; sourceTree = "<group>"; };
+		F56DF04F273DA35900A89631 /* SyncCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncCommand.swift; sourceTree = "<group>"; };
 		F57619C626E63D6000C144D9 /* BundleVirtualSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleVirtualSet.swift; sourceTree = "<group>"; };
 		F57619C826E63D9800C144D9 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		F57619CB26E6975600C144D9 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = SOURCE_ROOT; };
 		F57619D326E8905D00C144D9 /* CGImage+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Utilities.swift"; sourceTree = "<group>"; };
+		F577D6BF2709A89500D44CC1 /* ARViewRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRenderer.swift; sourceTree = "<group>"; };
+		F577D6C12709F79500D44CC1 /* SwiftUI+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Helpers.swift"; sourceTree = "<group>"; };
+		F57933F62771FCED00D1B0F1 /* MTLTexture+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Helpers.swift"; sourceTree = "<group>"; };
+		F5887B7E26FB1DA6008F9DF8 /* ARPlaneAnchor+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARPlaneAnchor+Utilities.swift"; sourceTree = "<group>"; };
+		F5887B8326FB6613008F9DF8 /* SDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModel.swift; sourceTree = "<group>"; };
+		F5887BA926FBC1C2008F9DF8 /* SDMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDMesh.swift; sourceTree = "<group>"; };
+		F5887BB326FC6E17008F9DF8 /* MathUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtilities.swift; sourceTree = "<group>"; };
+		F58CECFE275653070043CB67 /* London Bridge Alcove Guy's Campus.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = "London Bridge Alcove Guy's Campus.reality"; sourceTree = "<group>"; };
+		F58CED04275656E30043CB67 /* spaichingen_hill_4k.exr */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaichingen_hill_4k.exr; sourceTree = "<group>"; };
+		F58DF6982732D18600F09314 /* EarthMoon.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = EarthMoon.reality; sourceTree = "<group>"; };
+		F58DF6AE2733018000F09314 /* Scifi Corridor.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Scifi Corridor.reality"; sourceTree = "<group>"; };
+		F59815342736903300EDE0B3 /* SetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPreview.swift; sourceTree = "<group>"; };
+		F59F93C3270A3E2700AE4771 /* VSRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSRenderer.swift; sourceTree = "<group>"; };
+		F5A1D79B26F9EA43000A32A7 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		F5A1D79D26F9EA63000A32A7 /* RenderDestinationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDestinationProvider.swift; sourceTree = "<group>"; };
+		F5A1D79F26F9EA84000A32A7 /* MTKViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTKViewContainer.swift; sourceTree = "<group>"; };
+		F5A1D7A226F9EAFE000A32A7 /* VirtualSet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VirtualSet-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5A1D7A526F9EB0E000A32A7 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		F5A1D7A626F9EB2C000A32A7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		F5A1D7A826FA19CB000A32A7 /* VideoResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoResolution.swift; sourceTree = "<group>"; };
+		F5A43CCD270C44D8008B4650 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		F5A43CCF270CAFD7008B4650 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		F5A43CD1270CD489008B4650 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F5A43CD3270CDE11008B4650 /* DialogueBoxParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueBoxParameters.swift; sourceTree = "<group>"; };
+		F5A43CD5270CDED2008B4650 /* DialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueView.swift; sourceTree = "<group>"; };
+		F5A43CD7270CE5F2008B4650 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
+		F5ADD353273A7EFA00FA8EDB /* PFVideoRecordings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFVideoRecordings.swift; sourceTree = "<group>"; };
+		F5ADD355273A87BC00FA8EDB /* PFSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFSnapshot.swift; sourceTree = "<group>"; };
+		F5ADD357273A89D500FA8EDB /* PFSearchedTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFSearchedTerm.swift; sourceTree = "<group>"; };
 		F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Utilities.swift"; sourceTree = "<group>"; };
+		F5AF7422273D519E00B12FEE /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		F5BC9C9826E23F7700B99BBC /* VSSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSSession.swift; sourceTree = "<group>"; };
 		F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoreOptionsView.swift; path = VirtualSet/Views/VSControls/MoreOptionsView.swift; sourceTree = SOURCE_ROOT; };
 		F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSceneView.swift; sourceTree = "<group>"; };
 		F5BDB24626E2AEC10021D382 /* SnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotView.swift; sourceTree = "<group>"; };
 		F5BDB24826E2AEF90021D382 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		F5BDB24A26E2AF380021D382 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
-		F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceRotationViewModifier.swift; path = VirtualSet/DeviceRotationViewModifier.swift; sourceTree = SOURCE_ROOT; };
+		F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceRotationViewModifier.swift; path = VirtualSet/Views/DeviceRotationViewModifier.swift; sourceTree = SOURCE_ROOT; };
 		F5CB9A1526E169CA003DE7A1 /* VirtualSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		F5CB9A1E26E169CB003DE7A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5CB9A2126E169CB003DE7A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5CB9A2326E169CB003DE7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5CB9A2826E169CB003DE7A1 /* VirtualSetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CB9A2C26E169CB003DE7A1 /* VirtualSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSetTests.swift; sourceTree = "<group>"; };
 		F5CB9A2E26E169CB003DE7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5CB9A3326E169CB003DE7A1 /* VirtualSetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CB9A3726E169CB003DE7A1 /* VirtualSetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSetUITests.swift; sourceTree = "<group>"; };
 		F5CB9A3926E169CB003DE7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePickerView.swift; sourceTree = "<group>"; };
-		F5CF4D0026E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VSSession+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		F5CF0BD727417A5F00512F7C /* VideoFeedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedScene.swift; sourceTree = "<group>"; };
 		F5CF4D0226E2822B008FE8D0 /* VSControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSControlsView.swift; sourceTree = "<group>"; };
+		F5DB62DD270B0E0E00B70369 /* VirtualSetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSetConfiguration.swift; sourceTree = "<group>"; };
+		F5DD7D28273874B4004A4221 /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		F5DD7D2C27391C01004A4221 /* XRFilming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XRFilming.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DD7D2E27391C02004A4221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5DD7D3427391C02004A4221 /* XRFilming WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "XRFilming WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DD7D3927391C02004A4221 /* VirtualSetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualSetApp.swift; sourceTree = "<group>"; };
+		F5DD7D3B27391C02004A4221 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F5DD7D3D27391C02004A4221 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F5DD7D3F27391C02004A4221 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		F5DD7D4127391C02004A4221 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		F5DD7D4327391C04004A4221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5DD7D4627391C04004A4221 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5DD7D4827391C04004A4221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DD7D4927391C04004A4221 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F5DD7D552739237D004A4221 /* WatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSession.swift; sourceTree = "<group>"; };
+		F5DD7D572739273C004A4221 /* PhoneConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectivity.swift; sourceTree = "<group>"; };
 		F5E4993B26E265210031FF9A /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		F5F37B8C2710ECFC00CCFC9C /* RollingFilmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingFilmsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,17 +253,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2770E964EC2AF65204986326 /* Pods_VirtualSet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5CB9A2526E169CB003DE7A1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F5CB9A3026E169CB003DE7A1 /* Frameworks */ = {
+		F5DD7D3127391C02004A4221 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -120,9 +267,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		246128834F19F1249EA5DC8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E34D9B34A2E06F86DD83E1B9 /* Pods-VirtualSet.debug.xcconfig */,
+				9FD2391C37724DD97BB6ED83 /* Pods-VirtualSet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6EF7C75FFFE22EF6760B1B6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2158D641275ADE07166B251F /* Pods_VirtualSet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F525B4B726E5D40900DB20B7 /* Loaders */ = {
 			isa = PBXGroup;
 			children = (
+				F59815342736903300EDE0B3 /* SetPreview.swift */,
 				F525B4B826E5D43D00DB20B7 /* SceneLoader.swift */,
 				F57619C826E63D9800C144D9 /* Load.swift */,
 				F57619C626E63D6000C144D9 /* BundleVirtualSet.swift */,
@@ -130,18 +295,48 @@
 			path = Loaders;
 			sourceTree = "<group>";
 		};
+		F52EB86A2712E14C0009C272 /* BundleSets */ = {
+			isa = PBXGroup;
+			children = (
+				F58CECFE275653070043CB67 /* London Bridge Alcove Guy's Campus.reality */,
+				F58DF6AE2733018000F09314 /* Scifi Corridor.reality */,
+				F58DF6982732D18600F09314 /* EarthMoon.reality */,
+				F543BE642732B0F0004776CC /* Empty Set.reality */,
+			);
+			path = BundleSets;
+			sourceTree = "<group>";
+		};
 		F558862C26ECA54D0055886D /* ScenePicker */ = {
 			isa = PBXGroup;
 			children = (
+				F558863526ECFE490055886D /* SetDetailView.swift */,
+				F558863326ECE53B0055886D /* SetCellView.swift */,
 				F5CB9A4D26E1FF95003DE7A1 /* ScenePickerView.swift */,
 				F558862D26ECA5640055886D /* SearchBarView.swift */,
+				F53BEA70275CB5950079B681 /* ServerStageCellView.swift */,
 			);
 			path = ScenePicker;
+			sourceTree = "<group>";
+		};
+		F5753E33270513FE00EBB4E2 /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Skeleton;
+			sourceTree = "<group>";
+		};
+		F5753E3A27051B7F00EBB4E2 /* SDEngine */ = {
+			isa = PBXGroup;
+			children = (
+				F5753E33270513FE00EBB4E2 /* Skeleton */,
+			);
+			path = SDEngine;
 			sourceTree = "<group>";
 		};
 		F57619C526E63AC500C144D9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F52EB86A2712E14C0009C272 /* BundleSets */,
 				F525B4BC26E610A400DB20B7 /* BundleSets.json */,
 			);
 			path = Resources;
@@ -150,22 +345,68 @@
 		F57619D226E8904800C144D9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F5887BB326FC6E17008F9DF8 /* MathUtilities.swift */,
 				F57619D326E8905D00C144D9 /* CGImage+Utilities.swift */,
 				F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */,
 				F558863126ECD6070055886D /* View+HideKeyboard.swift */,
+				F5887B7E26FB1DA6008F9DF8 /* ARPlaneAnchor+Utilities.swift */,
+				F577D6C12709F79500D44CC1 /* SwiftUI+Helpers.swift */,
+				F51FF92E273FA36700CCFABB /* String+Helpers.swift */,
+				F57933F62771FCED00D1B0F1 /* MTLTexture+Helpers.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F5887B8226FB65D1008F9DF8 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				F5A1D79B26F9EA43000A32A7 /* Renderer.swift */,
+				F5A1D79D26F9EA63000A32A7 /* RenderDestinationProvider.swift */,
+				F5887B8326FB6613008F9DF8 /* SDModel.swift */,
+				F5887BA926FBC1C2008F9DF8 /* SDMesh.swift */,
+				F53CC73E2700871800484D8E /* SDTransform.swift */,
+				F577D6BF2709A89500D44CC1 /* ARViewRenderer.swift */,
+				F50B500B27735CF700F58C18 /* ARViewRenderer+ARSessionDelegate.swift */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		F5A1D7A126F9EAE9000A32A7 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				F5A1D7A526F9EB0E000A32A7 /* ShaderTypes.h */,
+				F5A1D7A626F9EB2C000A32A7 /* Shaders.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		F5A6233726F88A9200846418 /* RecordButton */ = {
+			isa = PBXGroup;
+			children = (
+				F5BDB24A26E2AF380021D382 /* RecordView.swift */,
+			);
+			path = RecordButton;
+			sourceTree = "<group>";
+		};
+		F5AF7421273D518F00B12FEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5AF7422273D519E00B12FEE /* TimerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F5BDB24326E2A6210021D382 /* VSControls */ = {
 			isa = PBXGroup;
 			children = (
+				F5A6233726F88A9200846418 /* RecordButton */,
 				F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */,
 				F5CF4D0226E2822B008FE8D0 /* VSControlsView.swift */,
-				F5BDB24A26E2AF380021D382 /* RecordView.swift */,
 				F5BDB24826E2AEF90021D382 /* AddItemView.swift */,
 				F5BDB24626E2AEC10021D382 /* SnapshotView.swift */,
 				F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */,
+				F5A43CCF270CAFD7008B4650 /* AddImageView.swift */,
+				F52EB8662711C3F50009C272 /* ButtonGradientColors.swift */,
 			);
 			path = VSControls;
 			sourceTree = "<group>";
@@ -173,10 +414,16 @@
 		F5CB9A0C26E169CA003DE7A1 = {
 			isa = PBXGroup;
 			children = (
+				F58CED04275656E30043CB67 /* spaichingen_hill_4k.exr */,
+				F56DF04F273DA35900A89631 /* SyncCommand.swift */,
 				F5CB9A1726E169CA003DE7A1 /* VirtualSet */,
 				F5CB9A2B26E169CB003DE7A1 /* VirtualSetTests */,
 				F5CB9A3626E169CB003DE7A1 /* VirtualSetUITests */,
+				F5DD7D2D27391C01004A4221 /* XRFilming */,
+				F5DD7D3827391C02004A4221 /* XRFilming WatchKit Extension */,
 				F5CB9A1626E169CA003DE7A1 /* Products */,
+				246128834F19F1249EA5DC8C /* Pods */,
+				6EF7C75FFFE22EF6760B1B6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,8 +431,8 @@
 			isa = PBXGroup;
 			children = (
 				F5CB9A1526E169CA003DE7A1 /* VirtualSet.app */,
-				F5CB9A2826E169CB003DE7A1 /* VirtualSetTests.xctest */,
-				F5CB9A3326E169CB003DE7A1 /* VirtualSetUITests.xctest */,
+				F5DD7D2C27391C01004A4221 /* XRFilming.app */,
+				F5DD7D3427391C02004A4221 /* XRFilming WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,19 +440,30 @@
 		F5CB9A1726E169CA003DE7A1 /* VirtualSet */ = {
 			isa = PBXGroup;
 			children = (
+				F5DB62DD270B0E0E00B70369 /* VirtualSetConfiguration.swift */,
+				F5753E3A27051B7F00EBB4E2 /* SDEngine */,
+				F5887B8226FB65D1008F9DF8 /* Renderer */,
+				F5A1D7A826FA19CB000A32A7 /* VideoResolution.swift */,
+				F5A1D7A126F9EAE9000A32A7 /* Shaders */,
 				F57619D226E8904800C144D9 /* Utilities */,
 				F57619CB26E6975600C144D9 /* Recorder.swift */,
 				F525B4B726E5D40900DB20B7 /* Loaders */,
 				F5E4993D26E26BE30031FF9A /* VSSession */,
 				F5CB9A4C26E1FC7B003DE7A1 /* Views */,
-				F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */,
 				F5CB9A1826E169CA003DE7A1 /* AppDelegate.swift */,
-				F5CB9A1C26E169CA003DE7A1 /* Experience.rcproject */,
 				F5CB9A1E26E169CB003DE7A1 /* Assets.xcassets */,
 				F5CB9A2326E169CB003DE7A1 /* Info.plist */,
 				F5CB9A2026E169CB003DE7A1 /* Preview Content */,
-				F5CB9A4526E1F0BB003DE7A1 /* Launch Screen.storyboard */,
 				F57619C526E63AC500C144D9 /* Resources */,
+				F5A1D7A226F9EAFE000A32A7 /* VirtualSet-Bridging-Header.h */,
+				F59F93C3270A3E2700AE4771 /* VSRenderer.swift */,
+				F5A43CD7270CE5F2008B4650 /* Hint.swift */,
+				F55DA14827367F1500AD27A1 /* PFVirtualStage.swift */,
+				F55DA14A27368AB100AD27A1 /* VirtualStage.swift */,
+				F5ADD353273A7EFA00FA8EDB /* PFVideoRecordings.swift */,
+				F5ADD355273A87BC00FA8EDB /* PFSnapshot.swift */,
+				F5ADD357273A89D500FA8EDB /* PFSearchedTerm.swift */,
+				F51FF92C273F958400CCFABB /* StageInfo.swift */,
 			);
 			path = VirtualSet;
 			sourceTree = "<group>";
@@ -239,21 +497,72 @@
 		F5CB9A4C26E1FC7B003DE7A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F5DD7D28273874B4004A4221 /* NetworkErrorView.swift */,
+				F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */,
+				F5A1D79F26F9EA84000A32A7 /* MTKViewContainer.swift */,
 				F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */,
 				F558862F26ECAB580055886D /* MainView.swift */,
 				F558862C26ECA54D0055886D /* ScenePicker */,
 				F5E4993B26E265210031FF9A /* ARViewContainer.swift */,
 				F525B47C26E4CFA000DB20B7 /* ARCoachingViewContainer.swift */,
 				F5BDB24326E2A6210021D382 /* VSControls */,
+				F5A43CCD270C44D8008B4650 /* IntroView.swift */,
+				F5A43CD1270CD489008B4650 /* LoadingView.swift */,
+				F5A43CD3270CDE11008B4650 /* DialogueBoxParameters.swift */,
+				F5A43CD5270CDED2008B4650 /* DialogueView.swift */,
+				F541A4B3270DB67600454C5B /* HintReplyView.swift */,
+				F541A4B5270DE9FF00454C5B /* AnnouncementView.swift */,
+				F541A4B7270E19D900454C5B /* PhotoPickerView.swift */,
+				F5F37B8C2710ECFC00CCFC9C /* RollingFilmsView.swift */,
+				F52EB868271236F10009C272 /* TipView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F5DD7D2D27391C01004A4221 /* XRFilming */ = {
+			isa = PBXGroup;
+			children = (
+				F5DD7D2E27391C02004A4221 /* Assets.xcassets */,
+			);
+			path = XRFilming;
+			sourceTree = "<group>";
+		};
+		F5DD7D3827391C02004A4221 /* XRFilming WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F5AF7421273D518F00B12FEE /* Views */,
+				F5DD7D3927391C02004A4221 /* VirtualSetApp.swift */,
+				F5CF0BD727417A5F00512F7C /* VideoFeedScene.swift */,
+				F5DD7D572739273C004A4221 /* PhoneConnectivity.swift */,
+				F5DD7D3B27391C02004A4221 /* ContentView.swift */,
+				F5DD7D3D27391C02004A4221 /* NotificationController.swift */,
+				F5DD7D3F27391C02004A4221 /* NotificationView.swift */,
+				F5DD7D4127391C02004A4221 /* ComplicationController.swift */,
+				F5DD7D4327391C04004A4221 /* Assets.xcassets */,
+				F5DD7D4827391C04004A4221 /* Info.plist */,
+				F5DD7D4927391C04004A4221 /* PushNotificationPayload.apns */,
+				F5DD7D4527391C04004A4221 /* Preview Content */,
+			);
+			path = "XRFilming WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F5DD7D4527391C04004A4221 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F5DD7D4627391C04004A4221 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F5E4993D26E26BE30031FF9A /* VSSession */ = {
 			isa = PBXGroup;
 			children = (
 				F5BC9C9826E23F7700B99BBC /* VSSession.swift */,
-				F5CF4D0026E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift */,
+				F5DD7D552739237D004A4221 /* WatchSession.swift */,
+				F55B42F5273E59600033E7C2 /* VSSession+WatchSessionDataSource.swift */,
+				F55B42F7273E59900033E7C2 /* VSSession+WatchSessionDelegate.swift */,
+				F55B42F9273E6A4B0033E7C2 /* VSSession+ARViewRendererDelegate.swift */,
+				F50B500927735AAD00F58C18 /* VSSession+ARCoachingOverlayDelegate.swift */,
 			);
 			path = VSSession;
 			sourceTree = "<group>";
@@ -265,56 +574,56 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5CB9A3C26E169CB003DE7A1 /* Build configuration list for PBXNativeTarget "VirtualSet" */;
 			buildPhases = (
+				6C97236C0CD4A774983BDDD7 /* [CP] Check Pods Manifest.lock */,
 				F5CB9A1126E169CA003DE7A1 /* Sources */,
 				F5CB9A1226E169CA003DE7A1 /* Frameworks */,
 				F5CB9A1326E169CA003DE7A1 /* Resources */,
+				774D4459A51A232905DAC946 /* [CP] Embed Pods Frameworks */,
+				F5DD7D5427391C04004A4221 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F5DD7D4B27391C04004A4221 /* PBXTargetDependency */,
 			);
 			name = VirtualSet;
-			packageProductDependencies = (
-			);
 			productName = VirtualSet;
 			productReference = F5CB9A1526E169CA003DE7A1 /* VirtualSet.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F5CB9A2726E169CB003DE7A1 /* VirtualSetTests */ = {
+		F5DD7D2B27391C01004A4221 /* XRFilming */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5CB9A3F26E169CB003DE7A1 /* Build configuration list for PBXNativeTarget "VirtualSetTests" */;
+			buildConfigurationList = F5DD7D5127391C04004A4221 /* Build configuration list for PBXNativeTarget "XRFilming" */;
 			buildPhases = (
-				F5CB9A2426E169CB003DE7A1 /* Sources */,
-				F5CB9A2526E169CB003DE7A1 /* Frameworks */,
-				F5CB9A2626E169CB003DE7A1 /* Resources */,
+				F5DD7D2A27391C01004A4221 /* Resources */,
+				F5DD7D5027391C04004A4221 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F5CB9A2A26E169CB003DE7A1 /* PBXTargetDependency */,
+				F5DD7D3727391C02004A4221 /* PBXTargetDependency */,
 			);
-			name = VirtualSetTests;
-			productName = VirtualSetTests;
-			productReference = F5CB9A2826E169CB003DE7A1 /* VirtualSetTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = XRFilming;
+			productName = XRFilming;
+			productReference = F5DD7D2C27391C01004A4221 /* XRFilming.app */;
+			productType = "com.apple.product-type.application.watchapp2";
 		};
-		F5CB9A3226E169CB003DE7A1 /* VirtualSetUITests */ = {
+		F5DD7D3327391C02004A4221 /* XRFilming WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5CB9A4226E169CB003DE7A1 /* Build configuration list for PBXNativeTarget "VirtualSetUITests" */;
+			buildConfigurationList = F5DD7D4D27391C04004A4221 /* Build configuration list for PBXNativeTarget "XRFilming WatchKit Extension" */;
 			buildPhases = (
-				F5CB9A2F26E169CB003DE7A1 /* Sources */,
-				F5CB9A3026E169CB003DE7A1 /* Frameworks */,
-				F5CB9A3126E169CB003DE7A1 /* Resources */,
+				F5DD7D3027391C02004A4221 /* Sources */,
+				F5DD7D3127391C02004A4221 /* Frameworks */,
+				F5DD7D3227391C02004A4221 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F5CB9A3526E169CB003DE7A1 /* PBXTargetDependency */,
 			);
-			name = VirtualSetUITests;
-			productName = VirtualSetUITests;
-			productReference = F5CB9A3326E169CB003DE7A1 /* VirtualSetUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = "XRFilming WatchKit Extension";
+			productName = "XRFilming WatchKit Extension";
+			productReference = F5DD7D3427391C02004A4221 /* XRFilming WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -322,19 +631,19 @@
 		F5CB9A0D26E169CA003DE7A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "Dynamic Stacks LTD";
 				TargetAttributes = {
 					F5CB9A1426E169CA003DE7A1 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1300;
 					};
-					F5CB9A2726E169CB003DE7A1 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = F5CB9A1426E169CA003DE7A1;
+					F5DD7D2B27391C01004A4221 = {
+						CreatedOnToolsVersion = 13.1;
 					};
-					F5CB9A3226E169CB003DE7A1 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = F5CB9A1426E169CA003DE7A1;
+					F5DD7D3327391C02004A4221 = {
+						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
@@ -347,15 +656,13 @@
 				Base,
 			);
 			mainGroup = F5CB9A0C26E169CA003DE7A1;
-			packageReferences = (
-			);
 			productRefGroup = F5CB9A1626E169CA003DE7A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F5CB9A1426E169CA003DE7A1 /* VirtualSet */,
-				F5CB9A2726E169CB003DE7A1 /* VirtualSetTests */,
-				F5CB9A3226E169CB003DE7A1 /* VirtualSetUITests */,
+				F5DD7D2B27391C01004A4221 /* XRFilming */,
+				F5DD7D3327391C02004A4221 /* XRFilming WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -365,89 +672,183 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F543BE652732B0F0004776CC /* Empty Set.reality in Resources */,
 				F57619CA26E642AF00C144D9 /* BundleSets.json in Resources */,
-				F5CB9A4626E1F0BB003DE7A1 /* Launch Screen.storyboard in Resources */,
+				F58DF6992732D18700F09314 /* EarthMoon.reality in Resources */,
+				F58CED05275656E30043CB67 /* spaichingen_hill_4k.exr in Resources */,
 				F5CB9A2226E169CB003DE7A1 /* Preview Assets.xcassets in Resources */,
+				F58DF6AF2733018000F09314 /* Scifi Corridor.reality in Resources */,
+				F58CECFF275653070043CB67 /* London Bridge Alcove Guy's Campus.reality in Resources */,
 				F5CB9A1F26E169CB003DE7A1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5CB9A2626E169CB003DE7A1 /* Resources */ = {
+		F5DD7D2A27391C01004A4221 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5DD7D2F27391C02004A4221 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5CB9A3126E169CB003DE7A1 /* Resources */ = {
+		F5DD7D3227391C02004A4221 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5DD7D4727391C04004A4221 /* Preview Assets.xcassets in Resources */,
+				F5DD7D4427391C04004A4221 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C97236C0CD4A774983BDDD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VirtualSet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		774D4459A51A232905DAC946 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VirtualSet/Pods-VirtualSet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VirtualSet/Pods-VirtualSet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VirtualSet/Pods-VirtualSet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F5CB9A1126E169CA003DE7A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F57933F72771FCED00D1B0F1 /* MTLTexture+Helpers.swift in Sources */,
+				F5887BB426FC6E17008F9DF8 /* MathUtilities.swift in Sources */,
+				F558863426ECE53B0055886D /* SetCellView.swift in Sources */,
+				F5A1D7A026F9EA84000A32A7 /* MTKViewContainer.swift in Sources */,
+				F5A2A978277C4AED00E692F3 /* SDModel.swift in Sources */,
 				F5AE187D26EA857300B25DB7 /* MTLTexture+Utilities.swift in Sources */,
+				F55B42F8273E59900033E7C2 /* VSSession+WatchSessionDelegate.swift in Sources */,
+				F5A43CD2270CD489008B4650 /* LoadingView.swift in Sources */,
 				F558863026ECAB580055886D /* MainView.swift in Sources */,
+				F5A43CD0270CAFD8008B4650 /* AddImageView.swift in Sources */,
+				F55DA14B27368AB100AD27A1 /* VirtualStage.swift in Sources */,
 				F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */,
 				F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */,
+				F5DD7D562739237D004A4221 /* WatchSession.swift in Sources */,
 				F525B4B926E5D43D00DB20B7 /* SceneLoader.swift in Sources */,
 				F5CB9A1B26E169CA003DE7A1 /* ContentView.swift in Sources */,
 				F558862E26ECA5640055886D /* SearchBarView.swift in Sources */,
+				F53BEA71275CB5950079B681 /* ServerStageCellView.swift in Sources */,
+				F55B42F6273E59600033E7C2 /* VSSession+WatchSessionDataSource.swift in Sources */,
+				F5A2A97A277C4AF200E692F3 /* SDTransform.swift in Sources */,
+				F5A2A976277C4AE700E692F3 /* Renderer.swift in Sources */,
+				F5ADD354273A7EFA00FA8EDB /* PFVideoRecordings.swift in Sources */,
 				F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */,
 				F57619C726E63D6000C144D9 /* BundleVirtualSet.swift in Sources */,
-				F5CF4D0126E26CE6008FE8D0 /* VSSession+ARSessionDelegate.swift in Sources */,
+				F5A43CD8270CE5F3008B4650 /* Hint.swift in Sources */,
+				F558863626ECFE490055886D /* SetDetailView.swift in Sources */,
+				F5887B7F26FB1DA6008F9DF8 /* ARPlaneAnchor+Utilities.swift in Sources */,
+				F541A4B8270E19D900454C5B /* PhotoPickerView.swift in Sources */,
+				F55B42FA273E6A4B0033E7C2 /* VSSession+ARViewRendererDelegate.swift in Sources */,
+				F5DD7D29273874B4004A4221 /* NetworkErrorView.swift in Sources */,
+				F5ADD356273A87BC00FA8EDB /* PFSnapshot.swift in Sources */,
+				F56DF050273DA35900A89631 /* SyncCommand.swift in Sources */,
+				F5A43CCE270C44D8008B4650 /* IntroView.swift in Sources */,
+				F561A3EB2743DFAA00D677AC /* VideoFeedScene.swift in Sources */,
+				F5ADD358273A89D500FA8EDB /* PFSearchedTerm.swift in Sources */,
+				F5DB62DE270B0E0E00B70369 /* VirtualSetConfiguration.swift in Sources */,
+				F577D6C22709F79500D44CC1 /* SwiftUI+Helpers.swift in Sources */,
+				F55DA14927367F1500AD27A1 /* PFVirtualStage.swift in Sources */,
+				F51FF92F273FA36700CCFABB /* String+Helpers.swift in Sources */,
 				F5CB9A1926E169CA003DE7A1 /* AppDelegate.swift in Sources */,
+				F50B500C27735CF700F58C18 /* ARViewRenderer+ARSessionDelegate.swift in Sources */,
 				F558863226ECD6070055886D /* View+HideKeyboard.swift in Sources */,
+				F5F37B8D2710ECFC00CCFC9C /* RollingFilmsView.swift in Sources */,
+				F5A43CD6270CDED2008B4650 /* DialogueView.swift in Sources */,
+				F541A4B4270DB67600454C5B /* HintReplyView.swift in Sources */,
 				F57619C926E63D9800C144D9 /* Load.swift in Sources */,
+				F59F93C4270A3E2700AE4771 /* VSRenderer.swift in Sources */,
+				F52EB8672711C3F60009C272 /* ButtonGradientColors.swift in Sources */,
 				F5BDB24726E2AEC10021D382 /* SnapshotView.swift in Sources */,
+				F51FF92D273F958400CCFABB /* StageInfo.swift in Sources */,
 				F5BDB24B26E2AF380021D382 /* RecordView.swift in Sources */,
 				F5BDB24D26E3E1840021D382 /* DeviceRotationViewModifier.swift in Sources */,
+				F5A2A979277C4AF000E692F3 /* SDMesh.swift in Sources */,
 				F5BDB24926E2AEF90021D382 /* AddItemView.swift in Sources */,
+				F5A43CD4270CDE11008B4650 /* DialogueBoxParameters.swift in Sources */,
+				F541A4B6270DE9FF00454C5B /* AnnouncementView.swift in Sources */,
+				F5A1D7A726F9EB2C000A32A7 /* Shaders.metal in Sources */,
 				F525B47D26E4CFA000DB20B7 /* ARCoachingViewContainer.swift in Sources */,
 				F57619CC26E6975600C144D9 /* Recorder.swift in Sources */,
+				F52EB869271236F10009C272 /* TipView.swift in Sources */,
 				F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */,
-				F5CB9A1D26E169CA003DE7A1 /* Experience.rcproject in Sources */,
+				F5A1D7A926FA19CB000A32A7 /* VideoResolution.swift in Sources */,
+				F577D6C02709A89500D44CC1 /* ARViewRenderer.swift in Sources */,
+				F59815352736903300EDE0B3 /* SetPreview.swift in Sources */,
+				F50B500A27735AAD00F58C18 /* VSSession+ARCoachingOverlayDelegate.swift in Sources */,
 				F5E4993C26E265210031FF9A /* ARViewContainer.swift in Sources */,
+				F5A2A977277C4AEA00E692F3 /* RenderDestinationProvider.swift in Sources */,
 				F57619D426E8905D00C144D9 /* CGImage+Utilities.swift in Sources */,
 				F5CF4D0326E2822B008FE8D0 /* VSControlsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5CB9A2426E169CB003DE7A1 /* Sources */ = {
+		F5DD7D3027391C02004A4221 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5CB9A2D26E169CB003DE7A1 /* VirtualSetTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F5CB9A2F26E169CB003DE7A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F5CB9A3826E169CB003DE7A1 /* VirtualSetUITests.swift in Sources */,
+				F56DF051273DA36300A89631 /* SyncCommand.swift in Sources */,
+				F5AF7423273D519E00B12FEE /* TimerView.swift in Sources */,
+				F5DD7D3E27391C02004A4221 /* NotificationController.swift in Sources */,
+				F5DD7D3C27391C02004A4221 /* ContentView.swift in Sources */,
+				F5CF0BD827417A5F00512F7C /* VideoFeedScene.swift in Sources */,
+				F5DD7D4227391C02004A4221 /* ComplicationController.swift in Sources */,
+				F5DD7D582739273C004A4221 /* PhoneConnectivity.swift in Sources */,
+				F5DD7D3A27391C02004A4221 /* VirtualSetApp.swift in Sources */,
+				F5DD7D4027391C02004A4221 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F5CB9A2A26E169CB003DE7A1 /* PBXTargetDependency */ = {
+		F5DD7D3727391C02004A4221 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5CB9A1426E169CA003DE7A1 /* VirtualSet */;
-			targetProxy = F5CB9A2926E169CB003DE7A1 /* PBXContainerItemProxy */;
+			target = F5DD7D3327391C02004A4221 /* XRFilming WatchKit Extension */;
+			targetProxy = F5DD7D3627391C02004A4221 /* PBXContainerItemProxy */;
 		};
-		F5CB9A3526E169CB003DE7A1 /* PBXTargetDependency */ = {
+		F5DD7D4B27391C04004A4221 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5CB9A1426E169CA003DE7A1 /* VirtualSet */;
-			targetProxy = F5CB9A3426E169CB003DE7A1 /* PBXContainerItemProxy */;
+			target = F5DD7D2B27391C01004A4221 /* XRFilming */;
+			targetProxy = F5DD7D4A27391C04004A4221 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -503,7 +904,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -558,7 +959,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -570,127 +971,180 @@
 		};
 		F5CB9A3D26E169CB003DE7A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E34D9B34A2E06F86DD83E1B9 /* Pods-VirtualSet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualSet/Preview Content\"";
-				DEVELOPMENT_TEAM = 6GQ3B4E7Z3;
+				DEVELOPMENT_TEAM = 44V6R68TFD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VirtualSet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EssamHemadi.VirtualSet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "VirtualSet/VirtualSet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F5CB9A3E26E169CB003DE7A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FD2391C37724DD97BB6ED83 /* Pods-VirtualSet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualSet/Preview Content\"";
-				DEVELOPMENT_TEAM = 6GQ3B4E7Z3;
+				DEVELOPMENT_TEAM = 44V6R68TFD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VirtualSet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EssamHemadi.VirtualSet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "VirtualSet/VirtualSet-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		F5CB9A4026E169CB003DE7A1 /* Debug */ = {
+		F5DD7D4E27391C04004A4221 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GQ3B4E7Z3;
-				INFOPLIST_FILE = VirtualSetTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "\"XRFilming WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 44V6R68TFD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "XRFilming WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "XRFilming WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = XRFilming_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Dynamic Stacks LTD. All rights reserved.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location might be necessary for third party services used by this application";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EssamHemadi.VirtualSetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtualSet.app/VirtualSet";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
-		F5CB9A4126E169CB003DE7A1 /* Release */ = {
+		F5DD7D4F27391C04004A4221 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GQ3B4E7Z3;
-				INFOPLIST_FILE = VirtualSetTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "\"XRFilming WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 44V6R68TFD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "XRFilming WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "XRFilming WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = XRFilming_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Dynamic Stacks LTD. All rights reserved.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location might be necessary for third party services used by this application";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EssamHemadi.VirtualSetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtualSet.app/VirtualSet";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
-		F5CB9A4326E169CB003DE7A1 /* Debug */ = {
+		F5DD7D5227391C04004A4221 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GQ3B4E7Z3;
-				INFOPLIST_FILE = VirtualSetUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EssamHemadi.VirtualSetUITests;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 44V6R68TFD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = XRFilming_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = XRFilming;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.DynamicStacks.XRFilmingLocations;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = VirtualSet;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
-		F5CB9A4426E169CB003DE7A1 /* Release */ = {
+		F5DD7D5327391C04004A4221 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GQ3B4E7Z3;
-				INFOPLIST_FILE = VirtualSetUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EssamHemadi.VirtualSetUITests;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 44V6R68TFD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = XRFilming_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = XRFilming;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.DynamicStacks.XRFilmingLocations;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = VirtualSet;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -715,20 +1169,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5CB9A3F26E169CB003DE7A1 /* Build configuration list for PBXNativeTarget "VirtualSetTests" */ = {
+		F5DD7D4D27391C04004A4221 /* Build configuration list for PBXNativeTarget "XRFilming WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5CB9A4026E169CB003DE7A1 /* Debug */,
-				F5CB9A4126E169CB003DE7A1 /* Release */,
+				F5DD7D4E27391C04004A4221 /* Debug */,
+				F5DD7D4F27391C04004A4221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5CB9A4226E169CB003DE7A1 /* Build configuration list for PBXNativeTarget "VirtualSetUITests" */ = {
+		F5DD7D5127391C04004A4221 /* Build configuration list for PBXNativeTarget "XRFilming" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5CB9A4326E169CB003DE7A1 /* Debug */,
-				F5CB9A4426E169CB003DE7A1 /* Release */,
+				F5DD7D5227391C04004A4221 /* Debug */,
+				F5DD7D5327391C04004A4221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

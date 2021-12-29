@@ -22,74 +22,48 @@ enum RecorderError: Error {
 class Recorder: NSObject {
     
     // MARK: - Properties
-    
     /// object that writes video frames to output url
     private var writer: AVAssetWriter!
-    
     /// input for media writer
     private var writerInput: AVAssetWriterInput!
-    
     /// output url of recorded video
     var outputURL: URL?
-    
-    /// var to keep track of recording status
-    private var isRecording: Bool = false {
-        didSet {
-            guard oldValue != isRecording else { return }
-            
-            if isRecording {
-                startRecording()
-            } else {
-                stopRecording()
-            }
-        }
-    }
-    
-    /// array holding publisher streams
-    private var streams = [AnyCancellable]()
-    
     /// Pixedl Buffer Adoptor Holding Pixel Buffers and Feeding Them To Writer Input
     private var adoptor: AVAssetWriterInputPixelBufferAdaptor!
-    
-    /// AR View To Record Video of
-    var arView: ARView
-    
     /// Video Resolution To Record
-    private lazy var size: CGSize = {
-        let viewSize = arView.bounds.size
-        return CGSize(width: viewSize.width, height: viewSize.height)
-    }()
+    var width: Int
+    var height: Int
     
     /// Audio Capture Session Using The Built-in Microphone
     private var audioCaptureSession: AVCaptureSession!
     
     /// Audio Output Used Writer
     private var audioOutput: AVCaptureAudioDataOutput!
-    
     /// Audio Track Input of Recording
     private var audioAssetWriterInput: AVAssetWriterInput!
-    
     /// Frame Count of AR Session Frames since AR Session started
     var frameCount: Int = 0
-    
-    /// Keep Track Of Recorded Frame Count
-    var videoFrame: Int = 1
-    
     var pixelBuffer: CVPixelBuffer?
     var pixelBytesPerRow: Int = 0
-    var queue: DispatchQueue = DispatchQueue.init(label: "myQueue")
-    var startedAt: Double?
-    var elapsed: Double = 0
-    
+    var startedAt: Date?
+    var elapsed: TimeInterval? {
+        if let started = startedAt {
+            return Date().timeIntervalSince(started)
+        }
+        return nil
+    }
+    let queue = DispatchQueue.init(label: "recordingQueue")
+    weak var delegate: RecorderDelegate?
+    var isReady: Bool = false
     // MARK: - Initialization
-    init?(view: ARView, isRecording: Published<Bool>.Publisher) {
-        self.arView = view
+    init?(width: Int, height: Int) {
+        self.width = width / 2
+        self.height = height / 2
+        
         super.init()
         
-        createDisplayLink()
-        
         outputURL = makeOutputURL(fileName: "myMovie.mov")
-        subscribeToIsRecording(isRecording: isRecording)
+        
         do {
             try setupPixelBuffer()
         } catch {
@@ -99,50 +73,32 @@ class Recorder: NSObject {
     }
     
     // MARK: - Methods
+    func update(renderedTexture: MTLTexture) {
+        guard writer.status.rawValue != 0, isReady else { return }
+        if startedAt == nil {
+            startedAt = Date()
+        }
+        
+        CVPixelBufferLockBaseAddress(pixelBuffer!, [])
+        let bytes = CVPixelBufferGetBaseAddress(pixelBuffer!)
+        let bytesPerRow = CVPixelBufferGetBytesPerRow(pixelBuffer!)
+        let region = MTLRegionMake2D(0, 0, renderedTexture.width / 2, renderedTexture.height / 2)
+        renderedTexture.getBytes( bytes!, bytesPerRow: bytesPerRow, from: region, mipmapLevel: 1)
+        
+        CVPixelBufferUnlockBaseAddress( pixelBuffer!, [])
+        
+        let elapsed = Date().timeIntervalSince(startedAt!)
+        let scale = CMTimeScale(NSEC_PER_SEC)
+        let presentationTime = CMTime(value: CMTimeValue(elapsed * Double(scale)), timescale: scale)
+        adoptor.append(pixelBuffer!, withPresentationTime: presentationTime)
+    }
+    
     private func setupPixelBuffer() throws {
-        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(size.width), Int(size.height), kCVPixelFormatType_32BGRA, nil, &self.pixelBuffer)
+        let status = CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32BGRA, nil, &self.pixelBuffer)
         guard status == kCVReturnSuccess else {
             throw RecorderError.pixelBufferError(description: "failed to initialize pixel buffer.", status: status)
         }
         pixelBytesPerRow = CVPixelBufferGetBytesPerRow(self.pixelBuffer!)
-    }
-    
-    func createDisplayLink() {
-        let displaylink = CADisplayLink(target: self,
-                                        selector: #selector(step))
-        displaylink.add(to: .current,
-                        forMode: RunLoop.Mode.default)
-    }
-    
-    @objc
-    func step(displaylink: CADisplayLink) {
-        guard isRecording else { return }
-        if startedAt == nil {
-            startedAt = displaylink.timestamp
-        }
-        frameCount += 1
-        //guard (frameCount % 2) == 0 else { return }
-        
-        DispatchQueue.main.async { [self] in
-            UIGraphicsBeginImageContext(size)
-            let rect = arView.bounds
-            arView.drawHierarchy(in: rect, afterScreenUpdates: false)
-            let image = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            let buffer = image.cgImage!.makePixelBuffer()
-            elapsed = displaylink.timestamp - startedAt!
-            let scale = CMTimeScale(NSEC_PER_SEC)
-            let presentationTime = CMTime(value: CMTimeValue(elapsed * Double(scale)), timescale: scale)
-            adoptor.append(buffer!, withPresentationTime: presentationTime)
-        }
-    }
-    
-    /// Subscribe to Client's isRecording Publisheer to Start Recording or Stop Once it's Toggled
-    private func subscribeToIsRecording(isRecording: Published<Bool>.Publisher) {
-        let stream = isRecording.sink { isRecording in
-            self.isRecording = isRecording
-        }
-        stream.store(in: &streams)
     }
     
     /// Create URL To Output Video Recording To
@@ -164,14 +120,14 @@ class Recorder: NSObject {
     private func setupWriter() {
         writer = try! AVAssetWriter(outputURL: outputURL!, fileType: AVFileType.mov)
         let outputSettings: [String: Any] = [AVVideoCodecKey: AVVideoCodecType.h264,
-                                             AVVideoWidthKey: size.width,
-                                             AVVideoHeightKey: size.height]
+                                             AVVideoWidthKey: width,
+                                             AVVideoHeightKey: height]
         writerInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: outputSettings)
 
         let bufferAttribs: [String: Any] = [
             kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA,
-            kCVPixelBufferWidthKey as String: size.width,
-            kCVPixelBufferHeightKey as String: size.height
+            kCVPixelBufferWidthKey as String: width,
+            kCVPixelBufferHeightKey as String: height
         ]
         adoptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput, sourcePixelBufferAttributes: bufferAttribs)
         writer.add(writerInput)
@@ -194,19 +150,27 @@ class Recorder: NSObject {
     }
     
     /// Start Recording Video
-    private func startRecording() {
-        startAudioCapture()
-        writer.startWriting()
-        writer.startSession(atSourceTime: .zero)
+    func startRecording() {
+        queue.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.startAudioCapture()
+            strongSelf.writer.startWriting()
+            strongSelf.writer.startSession(atSourceTime: .zero)
+            strongSelf.isReady = true
+            
+        }
     }
     
     /// Stop Recording Video
-    private func stopRecording() {
-        self.audioAssetWriterInput.markAsFinished()
-        queue.async { [self] in
-            writerInput.markAsFinished()
-            writer.finishWriting {
-                        UISaveVideoAtPathToSavedPhotosAlbum(self.outputURL!.path, self, #selector(self.videoSaveCompletion(video:didFinishSavingWithError:contextInfo:)), nil)
+    func stopRecording() {
+        queue.async { [weak self] in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.isReady = false
+            strongSelf.audioAssetWriterInput.markAsFinished()
+            strongSelf.writerInput.markAsFinished()
+            strongSelf.writer.finishWriting {
+                UISaveVideoAtPathToSavedPhotosAlbum(strongSelf.outputURL!.path, self, #selector(strongSelf.videoSaveCompletion(video:didFinishSavingWithError:contextInfo:)), nil)
             }
         }
     }
@@ -216,50 +180,58 @@ class Recorder: NSObject {
         self.outputURL = self.makeOutputURL(fileName: "myMovie.mov")
         self.setupWriter()
         startedAt = nil
-        self.videoFrame = 0
+        delegate?.recorderDidFinishSavingRecording(self)
     }
     
     private func startAudioCapture() {
         audioCaptureSession = AVCaptureSession()
-        let captureDevice = AVCaptureDevice.default(for: .audio)!
-        do {
-            let audioInput = try AVCaptureDeviceInput(device: captureDevice)
-            audioCaptureSession.addInput(audioInput)
-            audioOutput = AVCaptureAudioDataOutput()
-            audioOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
-            audioCaptureSession.addOutput(audioOutput)
-            audioCaptureSession.startRunning()
-        } catch {
-            os_log(.error, "error setting up audio input")
+        if let captureDevice = AVCaptureDevice.default(for: .audio) {
+            do {
+                let audioInput = try AVCaptureDeviceInput(device: captureDevice)
+                audioCaptureSession.addInput(audioInput)
+                audioOutput = AVCaptureAudioDataOutput()
+                audioOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
+                audioCaptureSession.addOutput(audioOutput)
+                audioCaptureSession.startRunning()
+            } catch {
+                os_log(.error, "error setting up audio input")
+            }
         }
     }
 }
 
 extension Recorder: AVCaptureAudioDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard isRecording else { return }
+        guard writer.status.rawValue != 0, isReady, startedAt != nil else { return }
         
-        var count: CMItemCount = 0
-        CMSampleBufferGetSampleTimingInfoArray(sampleBuffer, entryCount: count, arrayToFill: nil, entriesNeededOut: &count)
-        var info = [CMSampleTimingInfo](repeating: CMSampleTimingInfo(duration: CMTimeMake(value: 0, timescale: 0),
-                                                                      presentationTimeStamp: CMTimeMake(value: 0, timescale: 0),
-                                                                      decodeTimeStamp: CMTimeMake(value: 0, timescale: 0)),
-                                        count: count)
-        CMSampleBufferGetSampleTimingInfoArray(sampleBuffer,
-                                               entryCount: count,
-                                               arrayToFill: &info,
-                                               entriesNeededOut: &count)
-        
-        let scale = CMTimeScale(NSEC_PER_SEC)
-        let presentationTime = CMTime(value: CMTimeValue(elapsed * Double(scale)), timescale: scale)
-        
-        for i in 0..<count {
-            info[i].decodeTimeStamp = presentationTime
-            info[i].presentationTimeStamp = presentationTime
+        queue.async {
+            var count: CMItemCount = 0
+            CMSampleBufferGetSampleTimingInfoArray(sampleBuffer, entryCount: count, arrayToFill: nil, entriesNeededOut: &count)
+            var info = [CMSampleTimingInfo](repeating: CMSampleTimingInfo(duration: CMTimeMake(value: 0, timescale: 0),
+                                                                          presentationTimeStamp: CMTimeMake(value: 0, timescale: 0),
+                                                                          decodeTimeStamp: CMTimeMake(value: 0, timescale: 0)),
+                                            count: count)
+            CMSampleBufferGetSampleTimingInfoArray(sampleBuffer,
+                                                   entryCount: count,
+                                                   arrayToFill: &info,
+                                                   entriesNeededOut: &count)
+            
+            let elapsed = Date().timeIntervalSince(self.startedAt!)
+            let scale = CMTimeScale(NSEC_PER_SEC)
+            let presentationTime = CMTime(value: CMTimeValue(elapsed * Double(scale)), timescale: scale)
+            
+            for i in 0..<count {
+                info[i].decodeTimeStamp = presentationTime
+                info[i].presentationTimeStamp = presentationTime
+            }
+            
+            var soundBuffer: CMSampleBuffer?
+            CMSampleBufferCreateCopyWithNewTiming(allocator: kCFAllocatorDefault, sampleBuffer: sampleBuffer, sampleTimingEntryCount: count, sampleTimingArray: &info, sampleBufferOut: &soundBuffer)
+            self.audioAssetWriterInput.append(soundBuffer!)
         }
-        
-        var soundBuffer: CMSampleBuffer?
-        CMSampleBufferCreateCopyWithNewTiming(allocator: kCFAllocatorDefault, sampleBuffer: sampleBuffer, sampleTimingEntryCount: count, sampleTimingArray: &info, sampleBufferOut: &soundBuffer)
-        audioAssetWriterInput.append(soundBuffer!)
     }
+}
+
+protocol RecorderDelegate: AnyObject {
+    func recorderDidFinishSavingRecording(_ recorder: Recorder)
 }

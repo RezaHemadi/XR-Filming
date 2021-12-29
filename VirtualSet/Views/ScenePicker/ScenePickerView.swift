@@ -6,42 +6,63 @@
 //
 
 import SwiftUI
+import os.signpost
 
 struct ScenePickerView: View {
     
-    var session: VSSession
-    @State var searchTerm: String = ""
+    @EnvironmentObject var session: VSSession
+    @State private var searchTerm: String = ""
+    @State private var detailedSets = [SetPreview]()
+    
     static let backgroundGray: Color = Color(white: 50.0/255.0)
     
     var body: some View {
-        VStack(alignment: .center) {
-            Text("Scan the area and \ntap to select scene")
-                .font(.system(size: 24))
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .frame(width: 300)
-            
-            VStack {
-                SearchBarView(text: $searchTerm)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .top){
-                        ForEach(session.sceneLoader.bundleVirtualSets.filter {searchTerm.isEmpty ? true : $0.name.contains(searchTerm)}) { set in
-                            Image(set.name)
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(width: 120, height: 120)
-                                .scaledToFit()
-                                .padding(10)
-                                .onTapGesture {
-                                    session.userDidPickSet(set)
-                                }
+        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+            VStack(alignment: .center) {
+                Text("Scan the Area and \nTap to Select Scene")
+                    .font(.custom("AvenirNext-Regular", size: 24.0))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 300)
+                        
+                VStack {
+                    SearchBarView(text: $searchTerm)
+                        .padding(.top, 10)
+                        .onChange(of: searchTerm) { newValue in
+                            session.searchTermChanged(newValue: newValue)
+                        }
+                        
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        LazyHStack(alignment: .top){
+                            ForEach(session.setPreviews.filter { searchTerm.isEmpty ? true : $0.contains(searchTerm)}) { set in
+                                SetCellView(set: set, session: session, detailedSets: $detailedSets)
+                            }
                         }
                     }
                 }
+                .frame(height: 230)
+                .background(Self.backgroundGray.opacity(0.6))
             }
-            .frame(height: 200)
-            .background(Self.backgroundGray.opacity(0.6))
+            .padding(.top, 15)
+            VStack(alignment: .leading) {
+                ForEach(detailedSets) { set in
+                    SetDetailView(set: set)
+                        .padding()
+                        .offset(y: 150)
+                        .frame(height: 400)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .seconds(1))) {
+                                if let index = detailedSets.firstIndex(of: set) {
+                                    let _ = withAnimation {
+                                        detailedSets.remove(at: index)
+                                    }
+                                }
+                            }
+                        }
+                }
+            }
+            .frame(height: 400)
         }
     }
 }
@@ -53,8 +74,9 @@ struct ScenePickerView_Previews: PreviewProvider {
                 .resizable()
                 .scaledToFill()
             
-            ScenePickerView(session: VSSession(),
-                            searchTerm: "")
+            ScenePickerView()
+                .environmentObject(VSSession())
         }
+        .previewInterfaceOrientation(.landscapeRight)
     }
 }

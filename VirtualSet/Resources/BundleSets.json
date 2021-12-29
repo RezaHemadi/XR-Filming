@@ -1,50 +1,27 @@
 [
     {
+        "id": 0,
+        "name": "EarthMoon",
+        "description": "by Lightwarrior",
+        "keywords": ["Scifi", "Sci-fi", "Space"]
+    },
+    {
         "id": 1,
-        "name": "DynamicStacks"
+        "name": "Scifi Corridor",
+        "description": "by Alemenemiao",
+        "keywords": ["Scifi", "Sci-fi"]
     },
     {
         "id": 2,
-        "name": "BikiniDancer"
+        "name": "London Bridge Alcove Guy's Campus",
+        "description": "by Artfletch",
+        "environmentMap": "spaichingen_hill_4k.exr",
+        "keywords": ["Scanned", "London", "MegaPoly"]
     },
     {
         "id": 3,
-        "name": "Bar"
-    },
-    {
-        "id": 4,
-        "name": "VanGoghBedroom"
-    },
-    {
-        "id": 5,
-        "name": "DynamicStacksStage"
-    },
-    {
-        "id": 6,
-        "name": "HipHopDancer"
-    },
-    {
-        "id": 7,
-        "name": "PsychoRoom"
-    },
-    {
-        "id": 8,
-        "name": "ScannedRoom"
-    },
-    {
-        "id": 9,
-        "name": "ScifiNightclub"
-    },
-    {
-        "id": 10,
-        "name": "VictorianRoom"
-    },
-    {
-        "id": 11,
-        "name": "MagicRoom"
-    },
-    {
-        "id": 12,
-        "name": "TwoPersonStage"
+        "name": "Empty Set",
+        "description": "by Dynamic Stacks",
+        "keywords": []
     }
 ]

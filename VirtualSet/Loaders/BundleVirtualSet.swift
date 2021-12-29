@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct BundleVirtualSet: Codable, Identifiable, Hashable {
+struct BundleVirtualSet: Codable, Identifiable, Hashable, Equatable {
     var id: Int
     var name: String
+    var description: String
+    var environmentMap: String?
+    var keywords: [String]
 }

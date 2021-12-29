@@ -9,17 +9,41 @@ import UIKit
 import SwiftUI
 
 @main
+struct VirtualSetApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    private var session = VSSession()
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environmentObject(session)
+        }
+    }
+}
+class AppDelegate: NSObject, UIApplicationDelegate {
+        
+    static var orientationLock = UIInterfaceOrientationMask.all //By default you want all your views to rotate freely
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return AppDelegate.orientationLock
+    }
+}
+/*
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    @StateObject private var session = VSSession()
+    private var session = VSSession()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView().environmentObject(session)
+        
+        application.isIdleTimerDisabled = true
+        
+        
 
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
@@ -47,5 +71,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
+}*/
 

@@ -9,9 +9,17 @@ import SwiftUI
 
 struct ChangeSceneView: View {
     var body: some View {
-        Image("ActionIcon")
-            .resizable()
-            .frame(width: 60, height: 60)
+        LinearGradient(colors: [ButtonGradientColors[1],
+                                ButtonGradientColors[0]],
+                       startPoint: .bottomLeading,
+                       endPoint: .topTrailing)
+            .mask(Image("ChangeScene")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40)
+            )
+            .frame(width: 45, height: 45)
+        
     }
 }
 

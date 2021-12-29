@@ -9,10 +9,16 @@ import SwiftUI
 
 struct SnapshotView: View {
     var body: some View {
-        Image(systemName: "camera.fill")
-            .resizable()
-            .foregroundColor(.gray)
-            .frame(width: 64, height: 45)
+        LinearGradient(colors: [ButtonGradientColors[1], ButtonGradientColors[0]],
+                       startPoint: .bottom,
+                       endPoint: .top)
+            .mask(Image(systemName: "camera.fill")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40)
+            )
+            .frame(width: 50, height: 50)
+            
     }
 }
 
