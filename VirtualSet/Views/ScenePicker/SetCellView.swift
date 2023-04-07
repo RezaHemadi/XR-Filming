@@ -67,9 +67,10 @@ struct SetCellView: View {
             }
             
             Text(set.name)
+                .font(.custom("SF-Pro", size: 12.0))
+                .frame(width: 120.0)
                 .foregroundColor(.white)
-                .padding(.top, -15)
-                .font(.caption)
+                .padding(.top, -13)
         }
     }
 }

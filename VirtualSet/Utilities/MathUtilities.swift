@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import simd
 
 func matrix_float4x4_translation(translationX: Float, translationY: Float, translationZ: Float) -> matrix_float4x4 {
     return matrix_float4x4(columns: (vector_float4(1.0, 0.0, 0.0, 0.0),

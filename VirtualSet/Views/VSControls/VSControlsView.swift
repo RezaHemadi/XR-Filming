@@ -17,6 +17,8 @@ struct VSControlsView: View {
     @State var showPhotoPicker: Bool = false
     @State var pickedImages: [UIImage] = []
     @EnvironmentObject var session: VSSession
+    private var screenWidth: CGFloat = UIScreen.main.bounds.width
+    private var screenHeight: CGFloat = UIScreen.main.bounds.height
     
     // MARK: - View
     var body: some View {
@@ -53,9 +55,11 @@ struct VSControlsView: View {
                                 }) {
                                     AddImageView()
                                 }
-                                .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
-                                .animation(.easeInOut(duration: 0.3))
+                                //.transition(.asymmetric(insertion: .offset(x: -screenWidth / 2.0), removal: .offset(x: screenWidth / 2.0)))
+                                .transition(.offset(y: -screenHeight / 4.0))
+                                .animation(.easeInOut(duration: 1.0))
                                 .disabled(session.shouldShowTransformHint)
+                                .buttonStyle(GrowingButton())
                             }
                             
                             Button(action: {
@@ -64,6 +68,7 @@ struct VSControlsView: View {
                                 SnapshotView()
                             }
                             .disabled(session.shouldShowTransformHint)
+                            .buttonStyle(GrowingButton())
                         }
                         .frame(height: 200, alignment: .bottom)
                         .offset(y: -70)
@@ -83,9 +88,10 @@ struct VSControlsView: View {
                                 }) {
                                     ChangeSceneView()
                                 }
-                                .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
-                                .animation(.easeInOut(duration: 0.3))
+                                .transition(.offset(y: screenHeight / 2.0))
+                                .animation(.easeInOut(duration: 1.0))
                                 .disabled(session.shouldShowTransformHint)
+                                .buttonStyle(GrowingButton())
                             }
                             
                             if !session.isRecording {
@@ -94,8 +100,8 @@ struct VSControlsView: View {
                                         .resizable()
                                         .frame(width: 50.0, height: 50.0, alignment: .center)
                                 }
-                                .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
-                                .animation(.easeInOut(duration: 0.3))
+                                .transition(.offset(y: screenHeight / 4.0))
+                                .animation(.easeInOut(duration: 1.0))
                                 .disabled(session.shouldShowTransformHint)
                             }
                         }
@@ -174,9 +180,10 @@ struct VSControlsView: View {
                                                 .resizable()
                                                 .frame(width: 50.0, height: 50.0, alignment: .center)
                                         }
-                                        .transition(.asymmetric(insertion: .slide, removal: .move(edge: .leading)))
-                                        .animation(.easeInOut(duration: 0.3))
+                                        .transition(.offset(x: -screenWidth / 4.0))
+                                        .animation(.easeInOut(duration: 1.0))
                                         .disabled(session.shouldShowTransformHint)
+                                        .buttonStyle(GrowingButton())
                                     }
                                     
                                     if !session.isRecording {
@@ -187,9 +194,10 @@ struct VSControlsView: View {
                                         }) {
                                             ChangeSceneView()
                                         }
-                                        .transition(.asymmetric(insertion: .slide, removal: .move(edge: .leading)))
-                                        .animation(.easeInOut(duration: 0.3))
+                                        .transition(.offset(x: -screenWidth / 2.0))
+                                        .animation(.easeInOut(duration: 1.0))
                                         .disabled(session.shouldShowTransformHint)
+                                        .buttonStyle(GrowingButton())
                                     }
                                 }
                                 .frame(width: 400.0 / 2, height: 80, alignment: .trailing)
@@ -211,6 +219,7 @@ struct VSControlsView: View {
                                         SnapshotView()
                                     }
                                     .disabled(session.shouldShowTransformHint)
+                                    .buttonStyle(GrowingButton())
                                     
                                     if !session.isRecording {
                                         Button(action: {
@@ -218,9 +227,10 @@ struct VSControlsView: View {
                                         }) {
                                             AddImageView()
                                         }
-                                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
-                                        .animation(.easeInOut(duration: 0.3))
+                                        .transition(.offset(x: screenWidth / 4.0))
+                                        .animation(.easeInOut(duration: 1.0))
                                         .disabled(session.shouldShowTransformHint)
+                                        .buttonStyle(GrowingButton())
                                     }
                                 }
                                 .frame(width: 400.0 / 2, height: 80, alignment: .leading)

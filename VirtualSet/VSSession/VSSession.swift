@@ -249,7 +249,9 @@ final class VSSession: NSObject, ObservableObject {
         case .bundle(let bundleSet):
             
             DispatchQueue.main.async {
-                self.state = .loadingModel
+                withAnimation {
+                    self.state = .loadingModel
+                }
             }
             
             sceneLoader.loadBundleSet(bundleSet) { stage, sphere, error in
@@ -268,7 +270,9 @@ final class VSSession: NSObject, ObservableObject {
         case .server(let virtualStage):
             guard let setURL = virtualStage.modelURL else { fatalError() }
             DispatchQueue.main.async {
-                self.state = .loadingModel
+                withAnimation {
+                    self.state = .loadingModel
+                }
             }
             
             let request = Entity.loadAsync(contentsOf: setURL, withName: virtualStage.name + ".reality")
@@ -404,7 +408,7 @@ final class VSSession: NSObject, ObservableObject {
         let when = DispatchTime.now() + 5.0
         DispatchQueue.main.asyncAfter(deadline: when) {
             withAnimation {
-                self.hints.append(Hint("Positioning: You can  position the scene with tap, hold and drag gesture\nScale: Scale the scene larger or smaller with pinch in or out"))
+                self.hints.append(Hint("Positioning: You can  position the scene with tap, hold and drag gesture\n\nScale: Scale the scene larger or smaller with pinch in or out"))
             }
         }
         

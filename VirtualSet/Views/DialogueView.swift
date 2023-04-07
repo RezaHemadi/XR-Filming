@@ -64,7 +64,7 @@ struct DialogueView: View {
             
             Text(text)
                 .foregroundColor(.white)
-                .font(.system(size: 24.5, weight: .bold, design: .default))
+                .font(.custom("SF-Pro", size: 25.0))
                 .frame(width: width - pointerWidth - 10,
                        height: height,
                        alignment: Alignment(horizontal: .leading, vertical: .top))

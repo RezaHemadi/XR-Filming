@@ -20,11 +20,11 @@ struct ScenePickerView: View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
             VStack(alignment: .center) {
                 Text("Scan the Area and \nTap to Select Scene")
-                    .font(.custom("AvenirNext-Regular", size: 24.0))
-                    .fontWeight(.bold)
+                    .font(.custom("SF-Pro", size: 20.0))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .frame(width: 300)
+                    .padding([.top])
                         
                 VStack {
                     SearchBarView(text: $searchTerm)

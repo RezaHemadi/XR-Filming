@@ -16,8 +16,7 @@ struct TipView: View {
     
     var body: some View {
         Text(tip)
-            .fontWeight(.bold)
-            .font(.title)
+            .font(.custom("SF-Pro", size: 20.0))
             .multilineTextAlignment(.center)
             .foregroundColor(ButtonGradientColors[0])
             .padding()

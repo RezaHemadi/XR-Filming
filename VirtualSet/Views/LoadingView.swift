@@ -24,7 +24,7 @@ struct LoadingView: View {
                     }
                 }
             Text("Scene is loading")
-                .font(.title)
+                .font(.custom("SF-Pro", size: 20.0))
                 .foregroundColor(.white)
         }
     }

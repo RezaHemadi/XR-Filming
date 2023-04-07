@@ -14,6 +14,7 @@
 		F51FF92F273FA36700CCFABB /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51FF92E273FA36700CCFABB /* String+Helpers.swift */; };
 		F525B47D26E4CFA000DB20B7 /* ARCoachingViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B47C26E4CFA000DB20B7 /* ARCoachingViewContainer.swift */; };
 		F525B4B926E5D43D00DB20B7 /* SceneLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525B4B826E5D43D00DB20B7 /* SceneLoader.swift */; };
+		F52A5109277C9BCB009D9398 /* GrowingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A5108277C9BCB009D9398 /* GrowingButtonStyle.swift */; };
 		F52EB8672711C3F60009C272 /* ButtonGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52EB8662711C3F50009C272 /* ButtonGradientColors.swift */; };
 		F52EB869271236F10009C272 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52EB868271236F10009C272 /* TipView.swift */; };
 		F53BEA71275CB5950079B681 /* ServerStageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53BEA70275CB5950079B681 /* ServerStageCellView.swift */; };
@@ -49,15 +50,6 @@
 		F58DF6992732D18700F09314 /* EarthMoon.reality in Resources */ = {isa = PBXBuildFile; fileRef = F58DF6982732D18600F09314 /* EarthMoon.reality */; };
 		F58DF6AF2733018000F09314 /* Scifi Corridor.reality in Resources */ = {isa = PBXBuildFile; fileRef = F58DF6AE2733018000F09314 /* Scifi Corridor.reality */; };
 		F59815352736903300EDE0B3 /* SetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59815342736903300EDE0B3 /* SetPreview.swift */; };
-		F59F93C4270A3E2700AE4771 /* VSRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59F93C3270A3E2700AE4771 /* VSRenderer.swift */; };
-		F5A1D7A026F9EA84000A32A7 /* MTKViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D79F26F9EA84000A32A7 /* MTKViewContainer.swift */; };
-		F5A1D7A726F9EB2C000A32A7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D7A626F9EB2C000A32A7 /* Shaders.metal */; };
-		F5A1D7A926FA19CB000A32A7 /* VideoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D7A826FA19CB000A32A7 /* VideoResolution.swift */; };
-		F5A2A976277C4AE700E692F3 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D79B26F9EA43000A32A7 /* Renderer.swift */; };
-		F5A2A977277C4AEA00E692F3 /* RenderDestinationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1D79D26F9EA63000A32A7 /* RenderDestinationProvider.swift */; };
-		F5A2A978277C4AED00E692F3 /* SDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5887B8326FB6613008F9DF8 /* SDModel.swift */; };
-		F5A2A979277C4AF000E692F3 /* SDMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5887BA926FBC1C2008F9DF8 /* SDMesh.swift */; };
-		F5A2A97A277C4AF200E692F3 /* SDTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53CC73E2700871800484D8E /* SDTransform.swift */; };
 		F5A43CCE270C44D8008B4650 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CCD270C44D8008B4650 /* IntroView.swift */; };
 		F5A43CD0270CAFD8008B4650 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CCF270CAFD7008B4650 /* AddImageView.swift */; };
 		F5A43CD2270CD489008B4650 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A43CD1270CD489008B4650 /* LoadingView.swift */; };
@@ -69,6 +61,7 @@
 		F5ADD358273A89D500FA8EDB /* PFSearchedTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ADD357273A89D500FA8EDB /* PFSearchedTerm.swift */; };
 		F5AE187D26EA857300B25DB7 /* MTLTexture+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */; };
 		F5AF7423273D519E00B12FEE /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF7422273D519E00B12FEE /* TimerView.swift */; };
+		F5B1F552277C8961006796F2 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5B1F551277C8961006796F2 /* SF-Pro.ttf */; };
 		F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC9C9826E23F7700B99BBC /* VSSession.swift */; };
 		F5BDB24226E2A61D0021D382 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */; };
 		F5BDB24526E2A7350021D382 /* ChangeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */; };
@@ -154,10 +147,10 @@
 		F525B47C26E4CFA000DB20B7 /* ARCoachingViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCoachingViewContainer.swift; sourceTree = "<group>"; };
 		F525B4B826E5D43D00DB20B7 /* SceneLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLoader.swift; sourceTree = "<group>"; };
 		F525B4BC26E610A400DB20B7 /* BundleSets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BundleSets.json; sourceTree = "<group>"; };
+		F52A5108277C9BCB009D9398 /* GrowingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButtonStyle.swift; sourceTree = "<group>"; };
 		F52EB8662711C3F50009C272 /* ButtonGradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGradientColors.swift; sourceTree = "<group>"; };
 		F52EB868271236F10009C272 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		F53BEA70275CB5950079B681 /* ServerStageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStageCellView.swift; sourceTree = "<group>"; };
-		F53CC73E2700871800484D8E /* SDTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTransform.swift; sourceTree = "<group>"; };
 		F541A4B3270DB67600454C5B /* HintReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintReplyView.swift; sourceTree = "<group>"; };
 		F541A4B5270DE9FF00454C5B /* AnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
 		F541A4B7270E19D900454C5B /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
@@ -181,22 +174,12 @@
 		F577D6C12709F79500D44CC1 /* SwiftUI+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Helpers.swift"; sourceTree = "<group>"; };
 		F57933F62771FCED00D1B0F1 /* MTLTexture+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Helpers.swift"; sourceTree = "<group>"; };
 		F5887B7E26FB1DA6008F9DF8 /* ARPlaneAnchor+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARPlaneAnchor+Utilities.swift"; sourceTree = "<group>"; };
-		F5887B8326FB6613008F9DF8 /* SDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModel.swift; sourceTree = "<group>"; };
-		F5887BA926FBC1C2008F9DF8 /* SDMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDMesh.swift; sourceTree = "<group>"; };
 		F5887BB326FC6E17008F9DF8 /* MathUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtilities.swift; sourceTree = "<group>"; };
 		F58CECFE275653070043CB67 /* London Bridge Alcove Guy's Campus.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = "London Bridge Alcove Guy's Campus.reality"; sourceTree = "<group>"; };
 		F58CED04275656E30043CB67 /* spaichingen_hill_4k.exr */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaichingen_hill_4k.exr; sourceTree = "<group>"; };
 		F58DF6982732D18600F09314 /* EarthMoon.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = EarthMoon.reality; sourceTree = "<group>"; };
 		F58DF6AE2733018000F09314 /* Scifi Corridor.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Scifi Corridor.reality"; sourceTree = "<group>"; };
 		F59815342736903300EDE0B3 /* SetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPreview.swift; sourceTree = "<group>"; };
-		F59F93C3270A3E2700AE4771 /* VSRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSRenderer.swift; sourceTree = "<group>"; };
-		F5A1D79B26F9EA43000A32A7 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
-		F5A1D79D26F9EA63000A32A7 /* RenderDestinationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDestinationProvider.swift; sourceTree = "<group>"; };
-		F5A1D79F26F9EA84000A32A7 /* MTKViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTKViewContainer.swift; sourceTree = "<group>"; };
-		F5A1D7A226F9EAFE000A32A7 /* VirtualSet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VirtualSet-Bridging-Header.h"; sourceTree = "<group>"; };
-		F5A1D7A526F9EB0E000A32A7 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
-		F5A1D7A626F9EB2C000A32A7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		F5A1D7A826FA19CB000A32A7 /* VideoResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoResolution.swift; sourceTree = "<group>"; };
 		F5A43CCD270C44D8008B4650 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		F5A43CCF270CAFD7008B4650 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 		F5A43CD1270CD489008B4650 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -208,6 +191,7 @@
 		F5ADD357273A89D500FA8EDB /* PFSearchedTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFSearchedTerm.swift; sourceTree = "<group>"; };
 		F5AE187C26EA857300B25DB7 /* MTLTexture+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Utilities.swift"; sourceTree = "<group>"; };
 		F5AF7422273D519E00B12FEE /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		F5B1F551277C8961006796F2 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		F5BC9C9826E23F7700B99BBC /* VSSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSSession.swift; sourceTree = "<group>"; };
 		F5BDB24126E2A61D0021D382 /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoreOptionsView.swift; path = VirtualSet/Views/VSControls/MoreOptionsView.swift; sourceTree = SOURCE_ROOT; };
 		F5BDB24426E2A7350021D382 /* ChangeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSceneView.swift; sourceTree = "<group>"; };
@@ -318,21 +302,6 @@
 			path = ScenePicker;
 			sourceTree = "<group>";
 		};
-		F5753E33270513FE00EBB4E2 /* Skeleton */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Skeleton;
-			sourceTree = "<group>";
-		};
-		F5753E3A27051B7F00EBB4E2 /* SDEngine */ = {
-			isa = PBXGroup;
-			children = (
-				F5753E33270513FE00EBB4E2 /* Skeleton */,
-			);
-			path = SDEngine;
-			sourceTree = "<group>";
-		};
 		F57619C526E63AC500C144D9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,24 +329,10 @@
 		F5887B8226FB65D1008F9DF8 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
-				F5A1D79B26F9EA43000A32A7 /* Renderer.swift */,
-				F5A1D79D26F9EA63000A32A7 /* RenderDestinationProvider.swift */,
-				F5887B8326FB6613008F9DF8 /* SDModel.swift */,
-				F5887BA926FBC1C2008F9DF8 /* SDMesh.swift */,
-				F53CC73E2700871800484D8E /* SDTransform.swift */,
 				F577D6BF2709A89500D44CC1 /* ARViewRenderer.swift */,
 				F50B500B27735CF700F58C18 /* ARViewRenderer+ARSessionDelegate.swift */,
 			);
 			path = Renderer;
-			sourceTree = "<group>";
-		};
-		F5A1D7A126F9EAE9000A32A7 /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				F5A1D7A526F9EB0E000A32A7 /* ShaderTypes.h */,
-				F5A1D7A626F9EB2C000A32A7 /* Shaders.metal */,
-			);
-			path = Shaders;
 			sourceTree = "<group>";
 		};
 		F5A6233726F88A9200846418 /* RecordButton */ = {
@@ -414,6 +369,7 @@
 		F5CB9A0C26E169CA003DE7A1 = {
 			isa = PBXGroup;
 			children = (
+				F5B1F551277C8961006796F2 /* SF-Pro.ttf */,
 				F58CED04275656E30043CB67 /* spaichingen_hill_4k.exr */,
 				F56DF04F273DA35900A89631 /* SyncCommand.swift */,
 				F5CB9A1726E169CA003DE7A1 /* VirtualSet */,
@@ -441,10 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				F5DB62DD270B0E0E00B70369 /* VirtualSetConfiguration.swift */,
-				F5753E3A27051B7F00EBB4E2 /* SDEngine */,
 				F5887B8226FB65D1008F9DF8 /* Renderer */,
-				F5A1D7A826FA19CB000A32A7 /* VideoResolution.swift */,
-				F5A1D7A126F9EAE9000A32A7 /* Shaders */,
 				F57619D226E8904800C144D9 /* Utilities */,
 				F57619CB26E6975600C144D9 /* Recorder.swift */,
 				F525B4B726E5D40900DB20B7 /* Loaders */,
@@ -455,8 +408,6 @@
 				F5CB9A2326E169CB003DE7A1 /* Info.plist */,
 				F5CB9A2026E169CB003DE7A1 /* Preview Content */,
 				F57619C526E63AC500C144D9 /* Resources */,
-				F5A1D7A226F9EAFE000A32A7 /* VirtualSet-Bridging-Header.h */,
-				F59F93C3270A3E2700AE4771 /* VSRenderer.swift */,
 				F5A43CD7270CE5F2008B4650 /* Hint.swift */,
 				F55DA14827367F1500AD27A1 /* PFVirtualStage.swift */,
 				F55DA14A27368AB100AD27A1 /* VirtualStage.swift */,
@@ -499,7 +450,6 @@
 			children = (
 				F5DD7D28273874B4004A4221 /* NetworkErrorView.swift */,
 				F5BDB24C26E3E1840021D382 /* DeviceRotationViewModifier.swift */,
-				F5A1D79F26F9EA84000A32A7 /* MTKViewContainer.swift */,
 				F5CB9A1A26E169CA003DE7A1 /* ContentView.swift */,
 				F558862F26ECAB580055886D /* MainView.swift */,
 				F558862C26ECA54D0055886D /* ScenePicker */,
@@ -515,6 +465,7 @@
 				F541A4B7270E19D900454C5B /* PhotoPickerView.swift */,
 				F5F37B8C2710ECFC00CCFC9C /* RollingFilmsView.swift */,
 				F52EB868271236F10009C272 /* TipView.swift */,
+				F52A5108277C9BCB009D9398 /* GrowingButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -679,6 +630,7 @@
 				F5CB9A2226E169CB003DE7A1 /* Preview Assets.xcassets in Resources */,
 				F58DF6AF2733018000F09314 /* Scifi Corridor.reality in Resources */,
 				F58CECFF275653070043CB67 /* London Bridge Alcove Guy's Campus.reality in Resources */,
+				F5B1F552277C8961006796F2 /* SF-Pro.ttf in Resources */,
 				F5CB9A1F26E169CB003DE7A1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,8 +704,6 @@
 				F57933F72771FCED00D1B0F1 /* MTLTexture+Helpers.swift in Sources */,
 				F5887BB426FC6E17008F9DF8 /* MathUtilities.swift in Sources */,
 				F558863426ECE53B0055886D /* SetCellView.swift in Sources */,
-				F5A1D7A026F9EA84000A32A7 /* MTKViewContainer.swift in Sources */,
-				F5A2A978277C4AED00E692F3 /* SDModel.swift in Sources */,
 				F5AE187D26EA857300B25DB7 /* MTLTexture+Utilities.swift in Sources */,
 				F55B42F8273E59900033E7C2 /* VSSession+WatchSessionDelegate.swift in Sources */,
 				F5A43CD2270CD489008B4650 /* LoadingView.swift in Sources */,
@@ -768,8 +718,6 @@
 				F558862E26ECA5640055886D /* SearchBarView.swift in Sources */,
 				F53BEA71275CB5950079B681 /* ServerStageCellView.swift in Sources */,
 				F55B42F6273E59600033E7C2 /* VSSession+WatchSessionDataSource.swift in Sources */,
-				F5A2A97A277C4AF200E692F3 /* SDTransform.swift in Sources */,
-				F5A2A976277C4AE700E692F3 /* Renderer.swift in Sources */,
 				F5ADD354273A7EFA00FA8EDB /* PFVideoRecordings.swift in Sources */,
 				F5BC9C9926E23F7700B99BBC /* VSSession.swift in Sources */,
 				F57619C726E63D6000C144D9 /* BundleVirtualSet.swift in Sources */,
@@ -779,6 +727,7 @@
 				F541A4B8270E19D900454C5B /* PhotoPickerView.swift in Sources */,
 				F55B42FA273E6A4B0033E7C2 /* VSSession+ARViewRendererDelegate.swift in Sources */,
 				F5DD7D29273874B4004A4221 /* NetworkErrorView.swift in Sources */,
+				F52A5109277C9BCB009D9398 /* GrowingButtonStyle.swift in Sources */,
 				F5ADD356273A87BC00FA8EDB /* PFSnapshot.swift in Sources */,
 				F56DF050273DA35900A89631 /* SyncCommand.swift in Sources */,
 				F5A43CCE270C44D8008B4650 /* IntroView.swift in Sources */,
@@ -795,27 +744,22 @@
 				F5A43CD6270CDED2008B4650 /* DialogueView.swift in Sources */,
 				F541A4B4270DB67600454C5B /* HintReplyView.swift in Sources */,
 				F57619C926E63D9800C144D9 /* Load.swift in Sources */,
-				F59F93C4270A3E2700AE4771 /* VSRenderer.swift in Sources */,
 				F52EB8672711C3F60009C272 /* ButtonGradientColors.swift in Sources */,
 				F5BDB24726E2AEC10021D382 /* SnapshotView.swift in Sources */,
 				F51FF92D273F958400CCFABB /* StageInfo.swift in Sources */,
 				F5BDB24B26E2AF380021D382 /* RecordView.swift in Sources */,
 				F5BDB24D26E3E1840021D382 /* DeviceRotationViewModifier.swift in Sources */,
-				F5A2A979277C4AF000E692F3 /* SDMesh.swift in Sources */,
 				F5BDB24926E2AEF90021D382 /* AddItemView.swift in Sources */,
 				F5A43CD4270CDE11008B4650 /* DialogueBoxParameters.swift in Sources */,
 				F541A4B6270DE9FF00454C5B /* AnnouncementView.swift in Sources */,
-				F5A1D7A726F9EB2C000A32A7 /* Shaders.metal in Sources */,
 				F525B47D26E4CFA000DB20B7 /* ARCoachingViewContainer.swift in Sources */,
 				F57619CC26E6975600C144D9 /* Recorder.swift in Sources */,
 				F52EB869271236F10009C272 /* TipView.swift in Sources */,
 				F5CB9A4E26E1FF95003DE7A1 /* ScenePickerView.swift in Sources */,
-				F5A1D7A926FA19CB000A32A7 /* VideoResolution.swift in Sources */,
 				F577D6C02709A89500D44CC1 /* ARViewRenderer.swift in Sources */,
 				F59815352736903300EDE0B3 /* SetPreview.swift in Sources */,
 				F50B500A27735AAD00F58C18 /* VSSession+ARCoachingOverlayDelegate.swift in Sources */,
 				F5E4993C26E265210031FF9A /* ARViewContainer.swift in Sources */,
-				F5A2A977277C4AEA00E692F3 /* RenderDestinationProvider.swift in Sources */,
 				F57619D426E8905D00C144D9 /* CGImage+Utilities.swift in Sources */,
 				F5CF4D0326E2822B008FE8D0 /* VSControlsView.swift in Sources */,
 			);
@@ -979,7 +923,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualSet/Preview Content\"";
 				DEVELOPMENT_TEAM = 44V6R68TFD;
 				ENABLE_PREVIEWS = YES;
@@ -988,10 +932,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "VirtualSet/VirtualSet-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1008,7 +953,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualSet/Preview Content\"";
 				DEVELOPMENT_TEAM = 44V6R68TFD;
 				ENABLE_PREVIEWS = YES;
@@ -1017,10 +962,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "VirtualSet/VirtualSet-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1032,7 +978,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"XRFilming WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 44V6R68TFD;
 				ENABLE_PREVIEWS = YES;
@@ -1047,7 +993,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1065,7 +1011,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"XRFilming WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 44V6R68TFD;
 				ENABLE_PREVIEWS = YES;
@@ -1080,7 +1026,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1101,14 +1047,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 44V6R68TFD;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = XRFilming_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = XRFilming;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.DynamicStacks.XRFilmingLocations;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1129,14 +1075,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 44V6R68TFD;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = XRFilming_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = XRFilming;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.DynamicStacks.XRFilmingLocations;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DynamicStacks.XRFilmingLocations.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

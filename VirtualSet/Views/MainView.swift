@@ -23,6 +23,7 @@ struct MainView: View {
             case .loadingModel, .exploringScene:
                 Group {
                     VSControlsView()
+                        .transition(.opacity)
                         .environmentObject(session)
                         .disabled(session.state == .loadingModel)
                     
@@ -30,6 +31,7 @@ struct MainView: View {
                         ZStack {
                             LoadingView()
                                 .frame(height: 350, alignment: Alignment(horizontal: .center, vertical: .bottom))
+                                .transition(.opacity)
                             
                             if session.tip != nil {
                                 TipView(tip: session.tip!)
@@ -42,16 +44,18 @@ struct MainView: View {
                 }
             case .pickingSet:
                 ScenePickerView()
+                    .transition(.opacity)
                     .environmentObject(session)
             }
             
             VStack {
                 Spacer()
                 NetworkErrorView()
-                    .frame(width: 0.9 * UIScreen.main.bounds.width, height: 50.0, alignment: .center)
+                    .frame(width: 0.9 * UIScreen.main.bounds.width, height: 45.0, alignment: .center)
                     .opacity(session.shouldShowNetworkError ? 1.0 : 0.0)
                     .animation(.default, value: session.shouldShowNetworkError)
             }
+            .padding([.bottom])
             /*
             if session.shouldShowNetworkError {
                 

@@ -17,6 +17,7 @@ struct SearchBarView: View {
     var body: some View {
         HStack {
             TextField("Search", text: $text)
+                .font(.custom("SF-Pro", size: 20.0))
                 .foregroundColor(.gray)
                 .padding(7)
                 .frame(width: 200)

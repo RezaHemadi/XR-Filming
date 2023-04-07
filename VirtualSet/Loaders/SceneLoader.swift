@@ -172,49 +172,4 @@ class SceneLoader {
             return nil
         }
     }
-    
-    func loadBundleSet(url: URL, metalVertexDescriptor: MTLVertexDescriptor, device: MTLDevice) -> SDModel {
-        let modelVertexDescriptor = MTKModelIOVertexDescriptorFromMetal(metalVertexDescriptor)
-        
-        // Position
-        var attribute = modelVertexDescriptor.attributes[0] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributePosition
-        
-        // Texture Coordinates
-        attribute = modelVertexDescriptor.attributes[1] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributeTextureCoordinate
-        
-        // Normals
-        attribute = modelVertexDescriptor.attributes[2] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributeNormal
-        
-        // Tangents
-        attribute = modelVertexDescriptor.attributes[3] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributeTangent
-        
-        // BiTangents
-        attribute = modelVertexDescriptor.attributes[4] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributeBitangent
-        
-        // AO
-        attribute = modelVertexDescriptor.attributes[5] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributeOcclusionValue
-        
-        // JointInices
-        attribute = modelVertexDescriptor.attributes[6] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributeJointIndices
-        
-        // Joint weights
-        attribute = modelVertexDescriptor.attributes[7] as! MDLVertexAttribute
-        attribute.name = MDLVertexAttributeJointWeights
-        
-        // Buffer Allocator
-        let mtkBufferAllocator = MTKMeshBufferAllocator(device: device)
-        
-        // Initialize Asset
-        let asset = MDLAsset(url: url, vertexDescriptor: modelVertexDescriptor, bufferAllocator: mtkBufferAllocator)
-        let model = SDModel(asset: asset, device: device, vertexDescriptor: modelVertexDescriptor)
-        
-        return model
-    }
 }

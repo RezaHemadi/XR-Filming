@@ -1,0 +1,6 @@
+framework module Pods_VirtualSet {
+  umbrella header "Pods-VirtualSet-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -34,27 +34,21 @@ struct IntroView: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     VStack(alignment: .leading, spacing: 15) {
-                        Text("\u{2022} Camera")
+                        Label("Camera", systemImage: "camera.fill")
                             .font(Self.bodyFont)
                             .foregroundColor(.black)
                         
-                        Text("\u{2022} Microphone")
+                        Label("  Microphone", systemImage: "mic.fill")
                             .font(Self.bodyFont)
                             .foregroundColor(.black)
                         
-                        Text("\u{2022} Your gallery to save videos")
+                        Label("Your gallery to save videos", systemImage: "photo.on.rectangle")
                             .font(Self.bodyFont)
                             .foregroundColor(.black)
                         
-                        HStack(alignment: .top) {
-                            Text("\u{2022}")
-                                .font(Self.bodyFont)
-                                .foregroundColor(.black)
-                            
-                            Text("Internet connection to download new virtual location sets")
-                                .font(Self.bodyFont)
-                                .foregroundColor(.black)
-                        }
+                        Label("Internet connection to download new virtual location sets", systemImage: "network")
+                            .font(Self.bodyFont)
+                            .foregroundColor(.black)
                     }
                     .scaleEffect(listScale)
                     .opacity(listOpacity)
@@ -66,11 +60,15 @@ struct IntroView: View {
                         }
                     }
                     
+                    HStack {
+                        Spacer()
+                        Image("ActionIcon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 208, height: 104)
+                        Spacer()
+                    }
                     
-                    Image("ActionIcon")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 300, height: 150)
                     
                     Button(action: {
                         // Ask for requiered app permissions
@@ -122,7 +120,7 @@ struct IntroView: View {
                         Image("ActionIcon")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 300, height: 150)
+                            .frame(width: 208, height: 104)
                     }
                 }
                 
@@ -142,28 +140,21 @@ struct IntroView: View {
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 15) {
-                            Text("\u{2022} Camera")
-                                .font(Self.bodyFont)
-                                .foregroundColor(.black)
-                                
-                            
-                            Text("\u{2022} Microphone")
+                            Label("Camera", systemImage: "camera.fill")
                                 .font(Self.bodyFont)
                                 .foregroundColor(.black)
                             
-                            Text("\u{2022} Your gallery to save videos")
+                            Label("  Microphone", systemImage: "mic.fill")
                                 .font(Self.bodyFont)
                                 .foregroundColor(.black)
                             
-                            HStack(alignment: .top) {
-                                Text("\u{2022}")
-                                    .font(Self.bodyFont)
-                                    .foregroundColor(.black)
-                                
-                                Text("Internet connection to download new virtual location sets")
-                                    .font(Self.bodyFont)
-                                    .foregroundColor(.black)
-                            }
+                            Label("Your gallery to save videos", systemImage: "photo.on.rectangle")
+                                .font(Self.bodyFont)
+                                .foregroundColor(.black)
+                            
+                            Label("Internet connection to download new virtual location sets", systemImage: "network")
+                                .font(Self.bodyFont)
+                                .foregroundColor(.black)
                         }
                         .scaleEffect(listScale)
                         .opacity(listOpacity)
@@ -183,7 +174,7 @@ struct IntroView: View {
                         // Ask for requiered app permissions
                         session.requestAuthorization()
                     }) {
-                        Text("Proceed")
+                        Text("OK, Let's Go")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -195,6 +186,7 @@ struct IntroView: View {
                     }
                     .frame(width: 250, alignment: .center)
                     .scaleEffect(buttonScale)
+                    .padding([.top], 5.0)
                     .onAppear {
                         let animation = Animation.easeOut(duration: 1.0)
                         let foreverAnimation = animation.repeatForever(autoreverses: true).delay(1.0)
